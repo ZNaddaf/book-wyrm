@@ -42,12 +42,12 @@ const App = () => {
         <NavBar />
         <Container className="flex-grow-1 mt-5">
           <Switch>
-            <Route path="/" exact component={LandingPage} />
             <Route exact path="/home" component={HomePage} />
             <Route exact path="/login" component={LogIn} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/search" component={Search} />
             <PrivateRoute path="/profile" component={Profile} />
+            <Route path="/" exact component={LandingPage} />
           </Switch>
         </Container>
         <Footer />
