@@ -1,5 +1,5 @@
 # Book Wyrm
-## A database for Book Lovers
+### A database for Book Lovers
 
 # link:
 
@@ -7,11 +7,13 @@
 
 ## User Story
 
-* As a user, I want to be able to view create and track daily workouts.  I want to be able to log multiple exercises in a workout on a given day.  I should also be able to track the name, type, weight, sets, reps, and duration of exercise.  If the exercise is a cardio exercise, I should be able to track my distance traveled.
+* As someone who enjoys reading books, I want to search for new books, so that I can find new stuff to read.
+* As someone who likes books, I want to see information about different books, so i can pick the ones I like.
+* As a person who enjoys reading, I want to keep a running list of books, so that I always have something to read. 
 
 ## Business Context
 
-A consumer will reach their fitness goals quicker when they track their workout progress.
+A consumer will purchase books more often when they have an easy way to find and keep a list of the ones that are relevant to them.
 
 ## Operation
 
