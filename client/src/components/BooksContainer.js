@@ -13,9 +13,11 @@ export default class BooksContainer extends React.Component {
     }
 
     searchBooks = query => {
+        console.log(query)
         API.search(query)
-        .then(res => this.setState({results: res.data}))
-        .catch(err => console.log(err));
+            // .then(res => console.log(res.data.docs[0]))
+            .then(res => this.setState({ results: res.data.docs[0] }))
+            .catch(err => console.log(err));
     }
 
     handleInputChange = event => {
@@ -42,13 +44,14 @@ export default class BooksContainer extends React.Component {
     }
 
     render() {
+        console.log(this.state);
         return (
             <ul>
                 Hello
-                <SearchForm 
-                value={this.state.search}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
+                <SearchForm
+                    value={this.state.search}
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
                 />
                 <BookDetail />
                 {/* {this.state.books.map(books => <li key={books.id}>{books.name}</li>)} */}
