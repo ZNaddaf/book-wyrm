@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { Fragment } from "react";
 
-function LandingPage() {
-    return <div>
-        <h1>This is the page that shows up</h1>
-    </div>
-}
+import Hero from "../components/Hero";
+import Content from "../components/Content";
 
-export default LandingPage
+const LandingPage = () => (
+    <Fragment>
+        <Hero />
+        <hr />
+        <Content />
+    </Fragment>
+);
+
+export default LandingPage;

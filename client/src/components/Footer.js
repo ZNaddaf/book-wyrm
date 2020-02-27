@@ -1,9 +1,12 @@
-import React from "react"
+import React from "react";
 
-function Footer() {
-    return <div>
-        <footer><h2>This is the footer</h2></footer>
-    </div>
-}
+const Footer = () => (
+    <footer className="bg-light p-3 text-center">
+        <div className="logo" />
+        <p>
+            Application created by: team finish strong
+      </p>
+    </footer>
+);
 
-export default Footer
+export default Footer;
