@@ -8,17 +8,16 @@ import BookDetail from "./BookDetail";
 
 export default class BooksContainer extends React.Component {
     state = {
-        results: {},
+        results: [],
         search: ""
     }
 
     searchBooks = query => {
         console.log(query)
         API.search(query)
-            //.then(res => console.log(res.data.docs[0]))
             .then(res => {
                 console.log(res.data.docs);
-                this.setState({ results: res.data.docs[0] })
+                this.setState({ results: res.data.docs })
             })
             .catch(err => console.log(err));
     }
@@ -34,6 +33,7 @@ export default class BooksContainer extends React.Component {
     handleFormSubmit = event => {
         event.preventDefault();
         this.searchBooks(this.state.search);
+        // console.log(this.state);
     }
 
     //WHen this component mounts, search for the movie    
@@ -56,9 +56,10 @@ export default class BooksContainer extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit} />
                 <BookDetail
-                    title={this.state.results.title_suggest}
+                    title={this.state.results.map(result => {
+                        return <div key={result.id}>{result.title_suggest}</div>
+                    })}
                 />
-                {/* {this.state.books.map(books => <li key={books.id}>{books.name}</li>)} */}
             </div>
         )
     }
