@@ -109,7 +109,7 @@ Deadline: 03/06
 
 #### Working Plan on Github
 ![GitPlan](./client/public/images/Plan.png)
-
+[Github Project Link](https://github.com/N0matic/book-wyrm/projects)
 
 
 <!-- ## Pseudocode
