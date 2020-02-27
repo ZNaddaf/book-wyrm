@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/search" component={Search} />
         </Wrapper>
         <Footer />
       </div>
