@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SearchForm from "../components/SearchForm";
+// import SearchForm from "../components/SearchForm";
 // import API from "../utils/API";
-import Books from "../components/Books";
+import BooksContainer from "../components/BooksContainer";
 
 class Search extends Component {
 
@@ -9,8 +9,8 @@ class Search extends Component {
         return (
             <div>
                 <h1>Search for Book</h1>
-                <SearchForm />
-                <Books />
+                
+                <BooksContainer />
             </div>
         );
     }
