@@ -8,7 +8,7 @@ import BookDetail from "./BookDetail";
 
 export default class BooksContainer extends React.Component {
     state = {
-        results: {},
+        results: [],
         search: ""
     }
 
@@ -18,7 +18,8 @@ export default class BooksContainer extends React.Component {
             //.then(res => console.log(res.data.docs[0]))
             .then(res => {
                 console.log(res.data.docs);
-                this.setState({ results: res.data.docs[0] })
+                this.setState({ results: res.data.docs
+            })
             })
             .catch(err => console.log(err));
     }
@@ -56,7 +57,9 @@ export default class BooksContainer extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit} />
                 <BookDetail
-                    title={this.state.results.title_suggest}
+                    title={this.state.results.map(result => {
+                    return <div>{result.title_suggest}</div>
+                    })}
                 />
                 {/* {this.state.books.map(books => <li key={books.id}>{books.name}</li>)} */}
             </div>
