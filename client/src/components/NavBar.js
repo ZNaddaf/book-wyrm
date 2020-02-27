@@ -45,7 +45,7 @@ const NavBar = () => {
                   exact
                   activeClassName="router-link-exact-active"
                 >
-                  Home
+                  Back to Home
                 </NavLink>
               </NavItem>
             </Nav>
@@ -58,7 +58,7 @@ const NavBar = () => {
                     className="btn-margin"
                     onClick={() => loginWithRedirect({})}
                   >
-                    Log in
+                    Log In or Sign Up
                   </Button>
                 </NavItem>
               )}
@@ -82,6 +82,16 @@ const NavBar = () => {
                     >
                       <FontAwesomeIcon icon="user" className="mr-3" /> Profile
                     </DropdownItem>
+
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to="/search"
+                      className="dropdown-search"
+                      activeClassName="router-link-exact-active"
+                    >
+                      <FontAwesomeIcon icon="user" className="mr-3" /> Search
+                    </DropdownItem>
+
                     <DropdownItem
                       id="qsLogoutBtn"
                       onClick={() => logoutWithRedirect()}
@@ -93,7 +103,7 @@ const NavBar = () => {
                 </UncontrolledDropdown>
               )}
             </Nav>
-            {!isAuthenticated && (
+            {/* {!isAuthenticated && (
               <Nav className="d-md-none" navbar>
                 <NavItem>
                   <Button
@@ -144,7 +154,7 @@ const NavBar = () => {
                   </RouterNavLink>
                 </NavItem>
               </Nav>
-            )}
+            )} */}
           </Collapse>
         </Container>
       </Navbar>
