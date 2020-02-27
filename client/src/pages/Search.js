@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchForm from "../components/SearchForm"
 
 class Search extends Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class Search extends Component {
     render() { 
         return ( 
             <div>
+                <SearchForm />
                 <h1>Search for Book</h1>
             </div>
          );
