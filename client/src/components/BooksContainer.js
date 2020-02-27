@@ -15,8 +15,11 @@ export default class BooksContainer extends React.Component {
     searchBooks = query => {
         console.log(query)
         API.search(query)
-            // .then(res => console.log(res.data.docs[0]))
-            .then(res => this.setState({ results: res.data.docs[0] }))
+            //.then(res => console.log(res.data.docs[0]))
+            .then(res => {
+                console.log(res.data);
+                this.setState({ results: res.data.docs[0] })
+            })
             .catch(err => console.log(err));
     }
 
@@ -46,16 +49,17 @@ export default class BooksContainer extends React.Component {
     render() {
         console.log(this.state);
         return (
-            <ul>
+            <div>
                 Hello
                 <SearchForm
                     value={this.state.search}
                     handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.handleFormSubmit}
+                    handleFormSubmit={this.handleFormSubmit} />
+                <BookDetail
+                    title={this.state.results.title_suggest}
                 />
-                <BookDetail />
                 {/* {this.state.books.map(books => <li key={books.id}>{books.name}</li>)} */}
-            </ul>
+            </div>
         )
     }
 }
