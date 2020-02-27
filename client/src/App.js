@@ -1,20 +1,23 @@
 import React from 'react';
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 // import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Wrapper from "./components/Wrapper";
+import { Container } from "reactstrap";
+
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import Search from "./pages/Search";
+import Profile from "./pages/Profile";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Home from "./views/Home";
-import Profile from "./views/Profile";
+// import Home from "./views/Home";
+// import Profile from "./views/Profile";
 import { useAuth0 } from "./react-auth0-spa";
 import history from "./utils/history";
 
