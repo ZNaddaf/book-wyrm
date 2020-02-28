@@ -22,7 +22,7 @@ WORKDIR /app
 
 COPY --from=build /app/build ./build
 COPY --from=build /app/package.json .
-COPY --from=build /app/client/src/server.js .
+# COPY --from=build /app/client/src/server.js .
 
 ENV NODE_ENV production
 
