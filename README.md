@@ -75,8 +75,8 @@ Displays one of two divs to the user:
 - Displays the names of and information for the search results.
 <hr />
 
-![Search Page](./client/public/images/wireframes/search.jpeg)
-
+<!-- ![Search Page](./client/public/images/wireframes/search.jpeg) -->
+<img src="./client/public/images/wireframes/search.jpeg" width="25%"></img>
 
 ## Dev Team
 
