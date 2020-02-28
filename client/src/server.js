@@ -6,6 +6,8 @@ const app = express();
 const mongoose = require("mongoose");
 const routes = require("./../../routes")
 
+const db = require("./../../models")
+
 const PORT = process.env.SERVER_PORT || 3000;
 
 app.use(morgan("dev"));
@@ -23,7 +25,6 @@ app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -35,12 +36,20 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
+
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/reactbooks")
 .then(() => console.log("Database is connected"))
 .catch(err => console.log(err));
 
+db.Book.create({ title: "Great Gatsby" })
+  .then(dbBook => {
+    console.log(dbBook);
+  })
+  .catch(({ message }) => {
+    console.log(message);
+  })
 
 // Define any API routes before this runs
 app.get("*", (req, res) => {
