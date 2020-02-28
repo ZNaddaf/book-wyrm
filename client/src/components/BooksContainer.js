@@ -5,7 +5,6 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 
-
 export default class BooksContainer extends React.Component {
     state = {
         results: [],
