@@ -47,6 +47,11 @@ export default class BooksContainer extends React.Component {
         //     })
     }
 
+    // A function to handle button clicks
+    handleBtnClick() {
+
+    }
+
     render() {
         console.log(this.state);
         return (
@@ -58,11 +63,11 @@ export default class BooksContainer extends React.Component {
                     handleFormSubmit={this.handleFormSubmit} />
                 <BookDetail
                     details={this.state.results.map(result => {
-                        return <div>
+                        return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
                             <div><strong>Title: </strong>{result.title_suggest}</div>
                             <div><strong>Author: </strong>{result.author_name}</div>
                             <div><strong>Year Published: </strong>{result.first_publish_year}</div>
-                            <br />
+                            <button id="addBookBtn">Add Book</button>
                         </div>
                     })}
                 />
