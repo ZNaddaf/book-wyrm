@@ -4,6 +4,7 @@ import React from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
+import Saved from "./Saved";
 
 export default class BooksContainer extends React.Component {
     state = {
@@ -47,11 +48,6 @@ export default class BooksContainer extends React.Component {
         //     })
     }
 
-    // A function to handle button clicks
-    handleBtnClick() {
-
-    }
-
     render() {
         console.log(this.state);
         return (
@@ -61,6 +57,7 @@ export default class BooksContainer extends React.Component {
                     value={this.state.search}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit} />
+                <Saved />
                 <BookDetail
                     details={this.state.results.map(result => {
                         return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>

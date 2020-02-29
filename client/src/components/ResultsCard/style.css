@@ -1,0 +1,9 @@
+#results {
+    width: 100%;
+    padding: 0 2rem 0 2rem;
+}
+
+#results #title .btn {
+    margin: 5px;
+    float: right;
+}

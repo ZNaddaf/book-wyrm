@@ -7,8 +7,8 @@ import { Container } from "reactstrap";
 
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
-import LogIn from "./pages/LogIn";
-import SignUp from "./pages/SignUp";
+// import LogIn from "./pages/LogIn";
+// import SignUp from "./pages/SignUp";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 
@@ -43,8 +43,8 @@ const App = () => {
         <Container className="flex-grow-1 mt-5">
           <Switch>
             <Route exact path="/home" component={HomePage} />
-            <Route exact path="/login" component={LogIn} />
-            <Route exact path="/signup" component={SignUp} />
+            {/* <Route exact path="/login" component={LogIn} />
+            <Route exact path="/signup" component={SignUp} /> */}
             <Route exact path="/search" component={Search} />
             <PrivateRoute path="/profile" component={Profile} />
             <Route path="/" exact component={LandingPage} />
