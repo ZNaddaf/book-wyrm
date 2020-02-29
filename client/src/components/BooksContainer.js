@@ -38,17 +38,15 @@ export default class BooksContainer extends React.Component {
         // console.log(this.state);
     }
 
-    handleBtnClick(event) {
-        event.preventDefault();
-        // if (formObject.title && formObject.author) {
-        //     API.saveBook({
-        //         title: formObject.title,
-        //         author: formObject.author,
-        //         synopsis: formObject.synopsis
-        //     })
-        //         .then(res => loadBooks())
-        //         .catch(err => console.log(err));
-        // }
+    handleBtnClick(bookData) {
+        console.log(bookData)
+        // API.saveBook({
+        //     title: this.title_suggest,
+        //     author: this.author_name,
+        //     year: this.first_publish_year
+        // })
+        //     .then(res => API.getBooks())
+        //     .catch(err => console.log(err));
     };
 
     //When this component mounts, search for the movie    
@@ -75,11 +73,14 @@ export default class BooksContainer extends React.Component {
                 <BookDetail
                     details={this.state.results.map(result => {
                         return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
-                            <div><strong>Title: </strong>{result.title_suggest}</div>
+                            <div className="addBookBtn"><strong>Title: </strong>{result.title_suggest}</div>
                             <div><strong>Author: </strong>{result.author_name}</div>
                             <div><strong>Year Published: </strong>{result.first_publish_year}</div>
                             <div><strong>ID: </strong>{result.cover_i}</div>
-                            <button class="addBookBtn">Add Book</button>
+                            <button className="addBookBtn" onClick={(event) => {
+                                event.preventDefault();
+                                this.handleBtnClick(result)
+                            }}>Add Book</button>
                         </div>
                     })}
                 />
