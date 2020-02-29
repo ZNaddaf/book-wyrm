@@ -8,13 +8,13 @@ const mongoose = require("mongoose");
 
 const db = require("./models")
 
-const PORT = process.env.SERVER_PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(morgan("dev"));
-app.use(express.static(join(__dirname, "build")));
+app.use(express.static(join(__dirname, "client", "build")));
 
 app.use((_, res) => {
-  res.sendFile(join(__dirname, "build", "index.html"));
+  res.sendFile(join(__dirname, "client", "build", "index.html"));
 });
 
 //If server doesn't work uncomment out line 19 and ocmment out 21-23
