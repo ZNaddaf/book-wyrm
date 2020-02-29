@@ -1,37 +1,10 @@
-import React from 'react';
-import ResultsCard from './ResultsCard';
-import API from '../utils/API'
+import React from "react";
 
-class Saved extends React.Component {
-    state = {
-        saved: null,
-    }
-
-    componentDidMount() {
-        this.getSavedBooks();
-    }
-
-    getSavedBooks = () => {
-        API.getSaved()
-            .then(res =>
-                this.setState({
-                    saved: res.data
-                })
-            )
-            .catch(err => console.log(err));
-    };
-
-    handleDelete = id => {
-        API.deleteBook(id).then(res => this.getSavedBooks());
-    }
-
-    render() {
-        return (
-            <div>
-                <ResultsCard books={this.state.saved} saved={true} handleSaveDelete={this.handleDelete} />
-            </div>
-        );
-    }
+function SavedBooks() {
+    return (
+        <div>Here is where Saved Books will be.
+     </div>
+    )
 }
 
-export default Saved;
+export default SavedBooks;

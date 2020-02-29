@@ -38,15 +38,28 @@ export default class BooksContainer extends React.Component {
         // console.log(this.state);
     }
 
-    //WHen this component mounts, search for the movie    
-    componentDidMount() {
-        this.searchBooks("The lord of the rings");
-        // axios.get("http://openlibrary.org/search.json?q=" + query)
-        //     .then(res => {
-        //         console.log(res.data.docs[0]);
-        //         this.setState({ books: res.data });
+    handleBtnClick(event) {
+        event.preventDefault();
+        // if (formObject.title && formObject.author) {
+        //     API.saveBook({
+        //         title: formObject.title,
+        //         author: formObject.author,
+        //         synopsis: formObject.synopsis
         //     })
-    }
+        //         .then(res => loadBooks())
+        //         .catch(err => console.log(err));
+        // }
+    };
+
+    //When this component mounts, search for the movie    
+    // componentDidMount() {
+    //     this.searchBooks("The lord of the rings");
+    //     // axios.get("http://openlibrary.org/search.json?q=" + query)
+    //     //     .then(res => {
+    //     //         console.log(res.data.docs[0]);
+    //     //         this.setState({ books: res.data });
+    //     //     })
+    // }
 
     render() {
         console.log(this.state);
@@ -58,13 +71,15 @@ export default class BooksContainer extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit} />
                 <Saved />
+                <hr />
                 <BookDetail
                     details={this.state.results.map(result => {
                         return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
                             <div><strong>Title: </strong>{result.title_suggest}</div>
                             <div><strong>Author: </strong>{result.author_name}</div>
                             <div><strong>Year Published: </strong>{result.first_publish_year}</div>
-                            <button id="addBookBtn">Add Book</button>
+                            <div><strong>ID: </strong>{result.cover_i}</div>
+                            <button class="addBookBtn">Add Book</button>
                         </div>
                     })}
                 />

@@ -5,16 +5,16 @@ export default {
   search: function (query) {
     return axios.get(BASEURL + query);
   },
-  //gets all saved books
-  getSaved: function () {
-    return axios.get("/api/books");
+  // Gets the book with the given id
+  getBook: function (id) {
+    return axios.get("/api/books/" + id);
   },
-  //deletes saved book with given id
+  // Deletes the book with the given id
   deleteBook: function (id) {
     return axios.delete("/api/books/" + id);
   },
-  //saves an book
-  saveBook: function (book) {
-    return axios.post("/api/books", book);
+  // Saves a book to the database
+  saveBook: function (bookData) {
+    return axios.post("/api/books", bookData);
   }
 };
