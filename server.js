@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 
 const db = require("./models")
 
-const PORT = process.env.SERVER_PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
 app.use(morgan("dev"));
 app.use(express.static(join(__dirname, "build")));
