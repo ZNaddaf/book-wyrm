@@ -6,67 +6,67 @@ import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 
 export default class BooksContainer extends React.Component {
-    state = {
-        results: [],
-        search: ""
-    }
+  state = {
+    results: [],
+    search: ""
+  }
 
-    searchBooks = query => {
-        console.log(query)
-        API.search(query)
-            .then(res => {
-                console.log(res.data.docs);
-                this.setState({
-                    results: res.data.docs
-                })
-            })
-            .catch(err => console.log(err));
-    }
-
-    handleInputChange = event => {
-        const value = event.target.value;
-        const name = event.target.name;
+  searchBooks = query => {
+    console.log(query)
+    API.search(query)
+      .then(res => {
+        console.log(res.data.docs);
         this.setState({
-            [name]: value
-        });
-    };
+          results: res.data.docs
+        })
+      })
+      .catch(err => console.log(err));
+  }
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        this.searchBooks(this.state.search);
-        // console.log(this.state);
-    }
+  handleInputChange = event => {
+    const value = event.target.value;
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
+  };
 
-    //WHen this component mounts, search for the movie    
-    componentDidMount() {
-        this.searchBooks("The lord of the rings");
-        // axios.get("http://openlibrary.org/search.json?q=" + query)
-        //     .then(res => {
-        //         console.log(res.data.docs[0]);
-        //         this.setState({ books: res.data });
-        //     })
-    }
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.searchBooks(this.state.search);
+    // console.log(this.state);
+  }
 
-    render() {
-        console.log(this.state);
-        return (
-            <div>
-                Hello
-                <SearchForm
-                    value={this.state.search}
-                    handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.handleFormSubmit} />
-                <BookDetail
-                    details={this.state.results.map(result => {
-                        return <div>
-                            <div><strong>Title: </strong>{result.title_suggest}</div>
-                            <div><strong>Author: </strong>{result.author_name}</div>
-                            <div><strong>Year Published: </strong>{result.first_publish_year}</div>
-                            <br />
-                        </div>
-                    })}
-                />
+  //WHen this component mounts, search for the movie    
+  componentDidMount() {
+    this.searchBooks("The lord of the rings");
+    // axios.get("http://openlibrary.org/search.json?q=" + query)
+    //     .then(res => {
+    //         console.log(res.data.docs[0]);
+    //         this.setState({ books: res.data });
+    //     })
+  }
+
+  render() {
+    console.log(this.state);
+    return (
+      <div className="flex m-auto w-4/5 md:p-5 grid grid-cols-2 grid-flow-col gap-5">
+        Hello
+        < SearchForm
+          value={this.state.search}
+          handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit} />
+        <BookDetail
+          details={this.state.results.map(result => {
+            return <div>
+              <div><strong>Title: </strong>{result.title_suggest}</div>
+              <div><strong>Author: </strong>{result.author_name}</div>
+              <div><strong>Year Published: </strong>{result.first_publish_year}</div>
+              <br />
             </div>
-        )
-    }
+          })}
+        />
+      </div >
+    )
+  }
 }
