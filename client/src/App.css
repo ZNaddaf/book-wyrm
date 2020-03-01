@@ -10,15 +10,25 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  font-size: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
+.app-banner {
+  height: auto;
   pointer-events: none;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  padding: 10px;
+}
+
+.app-botm {
+  height: auto;
+  pointer-events: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

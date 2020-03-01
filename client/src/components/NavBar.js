@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../assets/Book-Wyrm-Logo2.png";
+
 
 import {
   Collapse,
@@ -47,6 +49,9 @@ const NavBar = () => {
                 >
                   Back to Home
                 </NavLink>
+              </NavItem>
+              <NavItem>
+                <img className="mb-10 app-logo" src={logo} alt="logo" height="75px" width="75px" />
               </NavItem>
             </Nav>
             <Nav className="d-none d-md-block" navbar>
