@@ -14,7 +14,7 @@ import Profile from "./pages/Profile";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Loading from "./components/Loading";
-import NavBar from "./components/navbar2";
+import NavBar from "./components/nav";
 import Footer from "./components/Footer";
 // import Home from "./views/Home";
 // import Profile from "./views/Profile";
