@@ -3,6 +3,10 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 
+const URL = "http://covers.openlibrary.org/b/id/";
+const size = "-M.jpg";
+
+
 export default class BooksContainer extends React.Component {
   state = {
     results: [],
@@ -51,6 +55,7 @@ export default class BooksContainer extends React.Component {
       })
   }
 
+
   render() {
     console.log(this.state.books);
     return (
@@ -62,6 +67,7 @@ export default class BooksContainer extends React.Component {
         <BookDetail
           details={this.state.results.map(result => {
             return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
+              <img src={URL + result.cover_i + size} style={{ margin: "auto" }} />
               <div className="addBookBtn"><strong>Title: </strong>{result.title_suggest}</div>
               <div><strong>Author: </strong>{result.author_name}</div>
               <div><strong>Year Published: </strong>{result.first_publish_year}</div>
