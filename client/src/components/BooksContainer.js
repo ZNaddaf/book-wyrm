@@ -40,13 +40,13 @@ export default class BooksContainer extends React.Component {
 
     handleBtnClick(bookData) {
         console.log(bookData)
-        // API.saveBook({
-        //     title: bookData.title_suggest,
-        //     author: bookData.author_name,
-        //     year: bookData.first_publish_year
-        // })
-        //     .then(res => API.getBooks())
-        //     .catch(err => console.log(err));
+        API.saveBook({
+            title: bookData.title_suggest,
+            author: bookData.author_name,
+            year: bookData.first_publish_year
+        })
+            .then(res => API.getBooks())
+            .catch(err => console.log(err));
     };
 
     //When this component mounts, search for the movie    

@@ -4,7 +4,7 @@ const { join } = require("path");
 const morgan = require("morgan");
 const app = express();
 const mongoose = require("mongoose");
-// const routes = require("./routes")
+const routes = require("./routes")
 
 const db = require("./models")
 
@@ -16,6 +16,9 @@ app.use(express.static(join(__dirname, "build")));
 app.use((_, res) => {
   res.sendFile(join(__dirname, "build", "index.html"));
 });
+
+// Add routes, both API and view
+app.use(routes);
 
 //If server doesn't work uncomment out line 19 and ocmment out 21-23
 mongoose.connect(
@@ -37,9 +40,6 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-// app.use(routes);
-
 
 // Connect to the Mongo DB
 
