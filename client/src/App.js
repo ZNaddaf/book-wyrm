@@ -14,7 +14,7 @@ import Profile from "./pages/Profile";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Loading from "./components/Loading";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/nav";
 import Footer from "./components/Footer";
 // import Home from "./views/Home";
 // import Profile from "./views/Profile";
@@ -38,9 +38,9 @@ const App = () => {
 
   return (
     <Router history={history}>
-      <div id="app" className="d-flex flex-column h-100">
+      <div id="app">
         <NavBar />
-        <Container className="flex-grow-1 mt-5">
+        <Container className="flex-grow-1 mt-5 bg-green-200">
           <Switch>
             <Route exact path="/home" component={HomePage} />
             {/* <Route exact path="/login" component={LogIn} />
