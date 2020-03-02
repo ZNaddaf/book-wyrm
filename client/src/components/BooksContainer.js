@@ -38,12 +38,13 @@ export default class BooksContainer extends React.Component {
     API.saveBook({
       title: bookData.title_suggest,
       author: bookData.author_name,
-      year: bookData.first_publish_year
+      year: bookData.first_publish_year,
+      id: bookData.cover_i
     })
       .then(res => API.getBooks())
       .catch(err => console.log(err));
   };
-  //When this component mounts, search for the movie    
+  // When this component mounts, search for the movie    
   componentDidMount() {
     API.getBooks();
     // this.searchBooks("The lord of the rings");
