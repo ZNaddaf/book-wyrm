@@ -1,10 +1,8 @@
 import React from "react";
-// import axios from "axios";
-// import BookDetail from "./BookDetail"
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
-import Saved from "./Saved";
+
 export default class BooksContainer extends React.Component {
   state = {
     results: [],
@@ -12,10 +10,8 @@ export default class BooksContainer extends React.Component {
     search: ""
   }
   searchBooks = query => {
-    // console.log(query)
     API.search(query)
       .then(res => {
-        // console.log(res.data.docs);
         this.setState({
           results: res.data.docs
         })
@@ -33,7 +29,6 @@ export default class BooksContainer extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchBooks(this.state.search);
-    // console.log(this.state);
   }
 
   handleBtnClick(bookData) {
@@ -45,7 +40,6 @@ export default class BooksContainer extends React.Component {
       id: bookData.cover_i
     })
       .then(res => API.getBooks())
-      // .then(console.log("Book saved!"))
       .catch(err => console.log(err));
   };
 
