@@ -4,7 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 import Highlight from "../components/Highlight";
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
-import Saved from "../components/Saved";
+import DeleteBook from "../components/DeleteBook"
 
 const Profile = () => {
 
@@ -32,7 +32,10 @@ const Profile = () => {
       <Row>
         <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
       </Row>
-      <Saved />
+      <DeleteBook 
+        
+      //delete button from list
+      />
     </Container>
   );
 };

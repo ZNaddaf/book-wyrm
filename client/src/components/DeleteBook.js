@@ -1,7 +1,7 @@
 import React from "react";
 import API from "../utils/API";
 
-export default class SavedBooks extends React.Component {
+export default class DeleteBook extends React.Component {
     state = {
         results: [],
         books: [],
@@ -16,6 +16,16 @@ export default class SavedBooks extends React.Component {
             })
     }
 
+    handleBtnClick(result) {
+        console.log(result)
+        API.deleteBook({
+          id: result.cover_i
+        })
+          .then(res => API.getBooks())
+          // .then(console.log("Book saved!"))
+          .catch(err => console.log(err));
+      };
+    
     render() {
         return (
             <div className="text-center" >
@@ -25,6 +35,10 @@ export default class SavedBooks extends React.Component {
                         <div><strong>Author: </strong>{result.author}</div>
                         <div><strong>Year Published: </strong>{result.year}</div>
                         <div><strong>ID: </strong>{result.id}</div>
+                        <button onClick = {(event) => {
+                            event.preventDefault();
+                            this.handleBtnClick(result)
+                         }}>Delete</button>
                     </div>
                 })}</div>
             </div>
