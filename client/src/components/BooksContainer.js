@@ -13,10 +13,10 @@ export default class BooksContainer extends React.Component {
     }
 
     searchBooks = query => {
-        console.log(query)
+        // console.log(query)
         API.search(query)
             .then(res => {
-                console.log(res.data.docs);
+                // console.log(res.data.docs);
                 this.setState({
                     results: res.data.docs
                 })
