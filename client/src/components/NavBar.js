@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../assets/Book-Wyrm-Logo2.png";
+
 
 import {
   Collapse,
@@ -45,8 +47,11 @@ const NavBar = () => {
                   exact
                   activeClassName="router-link-exact-active"
                 >
-                  Home
+                  Back to Home
                 </NavLink>
+              </NavItem>
+              <NavItem>
+                <img className="mb-10 app-logo" src={logo} alt="logo" height="75px" width="75px" />
               </NavItem>
             </Nav>
             <Nav className="d-none d-md-block" navbar>
@@ -58,7 +63,7 @@ const NavBar = () => {
                     className="btn-margin"
                     onClick={() => loginWithRedirect({})}
                   >
-                    Log in
+                    Log In or Sign Up
                   </Button>
                 </NavItem>
               )}
@@ -82,6 +87,16 @@ const NavBar = () => {
                     >
                       <FontAwesomeIcon icon="user" className="mr-3" /> Profile
                     </DropdownItem>
+
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to="/search"
+                      className="dropdown-search"
+                      activeClassName="router-link-exact-active"
+                    >
+                      <FontAwesomeIcon icon="user" className="mr-3" /> Search
+                    </DropdownItem>
+
                     <DropdownItem
                       id="qsLogoutBtn"
                       onClick={() => logoutWithRedirect()}
@@ -93,7 +108,7 @@ const NavBar = () => {
                 </UncontrolledDropdown>
               )}
             </Nav>
-            {!isAuthenticated && (
+            {/* {!isAuthenticated && (
               <Nav className="d-md-none" navbar>
                 <NavItem>
                   <Button
@@ -144,7 +159,7 @@ const NavBar = () => {
                   </RouterNavLink>
                 </NavItem>
               </Nav>
-            )}
+            )} */}
           </Collapse>
         </Container>
       </Navbar>

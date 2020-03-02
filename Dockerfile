@@ -9,11 +9,6 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN yarn install
-
-COPY . .
-
-RUN yarn build
 
 # ---------------
 
@@ -27,12 +22,10 @@ WORKDIR /app
 
 COPY --from=build /app/build ./build
 COPY --from=build /app/package.json .
-COPY --from=build /app/server.js .
+COPY --from=build /app/client/server.js .
 
 ENV NODE_ENV production
 
-RUN yarn install --production
-
-EXPOSE 3000
+EXPOSE 3001
 
 CMD ["node", "server.js"]

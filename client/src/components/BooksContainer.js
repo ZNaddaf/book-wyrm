@@ -4,7 +4,7 @@ import React from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
-
+import Saved from "./Saved";
 
 export default class BooksContainer extends React.Component {
     state = {
@@ -38,15 +38,26 @@ export default class BooksContainer extends React.Component {
         // console.log(this.state);
     }
 
-    //WHen this component mounts, search for the movie    
-    componentDidMount() {
-        this.searchBooks("The lord of the rings");
-        // axios.get("http://openlibrary.org/search.json?q=" + query)
-        //     .then(res => {
-        //         console.log(res.data.docs[0]);
-        //         this.setState({ books: res.data });
-        //     })
-    }
+    handleBtnClick(bookData) {
+        console.log(bookData)
+        API.saveBook({
+            title: bookData.title_suggest,
+            author: bookData.author_name,
+            year: bookData.first_publish_year
+        })
+            .then(res => API.getBooks())
+            .catch(err => console.log(err));
+    };
+
+    //When this component mounts, search for the movie    
+    // componentDidMount() {
+    //     this.searchBooks("The lord of the rings");
+    //     // axios.get("http://openlibrary.org/search.json?q=" + query)
+    //     //     .then(res => {
+    //     //         console.log(res.data.docs[0]);
+    //     //         this.setState({ books: res.data });
+    //     //     })
+    // }
 
     render() {
         console.log(this.state);
@@ -57,13 +68,19 @@ export default class BooksContainer extends React.Component {
                     value={this.state.search}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit} />
+                <Saved />
+                <hr />
                 <BookDetail
                     details={this.state.results.map(result => {
-                        return <div>
-                            <div><strong>Title: </strong>{result.title_suggest}</div>
+                        return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
+                            <div className="addBookBtn"><strong>Title: </strong>{result.title_suggest}</div>
                             <div><strong>Author: </strong>{result.author_name}</div>
                             <div><strong>Year Published: </strong>{result.first_publish_year}</div>
-                            <br />
+                            <div><strong>ID: </strong>{result.cover_i}</div>
+                            <button className="addBookBtn" onClick={(event) => {
+                                event.preventDefault();
+                                this.handleBtnClick(result)
+                            }}>Add Book</button>
                         </div>
                     })}
                 />

@@ -2,15 +2,39 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.mb-15 {
+  text-align: center;
+}
+
+.my-5 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 10px;
+}
+
+.app-banner {
+  height: auto;
   pointer-events: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.app-botm {
+  height: auto;
+  pointer-events: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  /* .App-logo {
+    /* animation: App-logo-spin infinite 20s linear; */
+  /* } */
 }
 
 .App-header {
