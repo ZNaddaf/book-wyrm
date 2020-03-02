@@ -44,14 +44,15 @@ export default class BooksContainer extends React.Component {
       .catch(err => console.log(err));
   };
   //When this component mounts, search for the movie    
-  // componentDidMount() {
-  //     this.searchBooks("The lord of the rings");
-  //     // axios.get("http://openlibrary.org/search.json?q=" + query)
-  //     //     .then(res => {
-  //     //         console.log(res.data.docs[0]);
-  //     //         this.setState({ books: res.data });
-  //     //     })
-  // }
+  componentDidMount() {
+    API.getBooks();
+    // this.searchBooks("The lord of the rings");
+    // axios.get("http://openlibrary.org/search.json?q=" + query)
+    //     .then(res => {
+    //         console.log(res.data.docs[0]);
+    //         this.setState({ books: res.data });
+    //     })
+  }
   render() {
     console.log(this.state);
     return (
