@@ -11,6 +11,7 @@ const db = require("./models")
 const PORT = process.env.PORT || 3001;
 
 //If server doesn't work uncomment out line 19 and ocmment out 21-23
+// Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/reactbooks")
   .then(() => console.log("Database is connected"))
@@ -30,15 +31,6 @@ app.use(morgan("dev"));
 
 // Add routes, both API and view
 app.use("/api", routes);
-// Connect to the Mongo DB
-
-// db.Book.create({ title: "Great Gatsby" })
-//   .then(dbBook => {
-//     console.log(dbBook);
-//   })
-//   .catch(({ message }) => {
-//     console.log(message)
-//   })
 
 // Define any API routes before this runs
 app.get("*", (req, res) => {

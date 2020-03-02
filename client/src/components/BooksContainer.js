@@ -42,8 +42,10 @@ export default class BooksContainer extends React.Component {
       id: bookData.cover_i
     })
       .then(res => API.getBooks())
+      // .then(console.log("Book saved!"))
       .catch(err => console.log(err));
   };
+
   // When this component mounts, search for the movie    
   componentDidMount() {
     API.getBooks();
@@ -54,6 +56,7 @@ export default class BooksContainer extends React.Component {
     //         this.setState({ books: res.data });
     //     })
   }
+
   render() {
     console.log(this.state);
     return (
@@ -63,7 +66,8 @@ export default class BooksContainer extends React.Component {
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit} />
-        <Saved />
+        <Saved
+          details={this.componentDidMount} />
         <hr />
         <BookDetail
           details={this.state.results.map(result => {

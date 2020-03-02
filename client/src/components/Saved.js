@@ -1,10 +1,29 @@
 import React from "react";
+// import API from "../utils/API";
 
-function SavedBooks() {
+function SavedBooks(props) {
+    // console.log(props)
     return (
-        <div>Here is where Saved Books will be.
-     </div>
+        <div className="text-center">
+            <div>{props.details}</div>
+            {/* <h3>Author(s): {props.author_name}</h3>
+                <h3>Genre: {props.subject[0]}</h3>
+                <h3>Published year: {props.first_publish_year}</h3> */}
+
+        </div>
     )
 }
 
 export default SavedBooks;
+// export default class SavedBooks extends React.Component {
+
+//     componentDidMount() {
+//         API.getBooks()
+//     }
+//     render() {
+//         return (
+//             <div> Here is where Saved Books will be.
+//      </div >
+//         )
+//     }
+// }
