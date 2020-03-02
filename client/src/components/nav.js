@@ -50,7 +50,7 @@ const NavBar = () => {
           </Link>
         </li>
 
-        {!isAuthenticated && (
+        {isAuthenticated && (
           <div className="flex">
             <li className="flex-1 mr-2">
               <Link
