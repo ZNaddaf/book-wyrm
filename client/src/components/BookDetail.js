@@ -1,7 +1,7 @@
 import React from 'react';
 
 function BookDetail(props) {
-    console.log(props)
+    // console.log(props)
     return (
         <div className="text-center">
             <div>{props.details}</div>
