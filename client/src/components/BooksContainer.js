@@ -73,7 +73,7 @@ export default class BooksContainer extends React.Component {
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit} />
-        <Saved
+        {/* <Saved
           details={this.state.books.map(result => {
             return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
               <div className="addBookBtn"><strong>Title: </strong>{result.title}</div>
@@ -81,7 +81,9 @@ export default class BooksContainer extends React.Component {
               <div><strong>Year Published: </strong>{result.year}</div>
               <div><strong>ID: </strong>{result.id}</div>
             </div>
-          })} />
+          })} /> */}
+        <Saved
+          details={this.state.books} />
         <hr />
         <BookDetail
           details={this.state.results.map(result => {
