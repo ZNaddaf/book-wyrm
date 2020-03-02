@@ -32,7 +32,10 @@ app.use(morgan("dev"));
 app.use("/api", routes);
 // Connect to the Mongo DB
 
-// db.Book.create({ title: "Great Gatsby" })
+// db.Book.create({ title: "Great Gatsby",
+// author: "gene bill",
+// id: 12313 
+// })
 //   .then(dbBook => {
 //     console.log(dbBook);
 //   })

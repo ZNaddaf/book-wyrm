@@ -28,11 +28,13 @@ export default class BooksContainer extends React.Component {
       [name]: value
     });
   };
+
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchBooks(this.state.search);
     // console.log(this.state);
   }
+
   handleBtnClick(bookData) {
     console.log(bookData)
     API.saveBook({
@@ -43,7 +45,8 @@ export default class BooksContainer extends React.Component {
       .then(res => API.getBooks())
       .catch(err => console.log(err));
   };
-  //When this component mounts, search for the movie    
+
+  //When this component mounts, search for the book    
   componentDidMount() {
     API.getBooks();
     // this.searchBooks("The lord of the rings");
