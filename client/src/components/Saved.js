@@ -15,15 +15,3 @@ function SavedBooks(props) {
 }
 
 export default SavedBooks;
-// export default class SavedBooks extends React.Component {
-
-//     componentDidMount() {
-//         API.getBooks()
-//     }
-//     render() {
-//         return (
-//             <div> Here is where Saved Books will be.
-//      </div >
-//         )
-//     }
-// }
