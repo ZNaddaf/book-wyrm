@@ -8,6 +8,7 @@ import Saved from "./Saved";
 export default class BooksContainer extends React.Component {
   state = {
     results: [],
+    books: [],
     search: ""
   }
   searchBooks = query => {
@@ -28,11 +29,13 @@ export default class BooksContainer extends React.Component {
       [name]: value
     });
   };
+
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchBooks(this.state.search);
     // console.log(this.state);
   }
+
   handleBtnClick(bookData) {
     console.log(bookData)
     API.saveBook({
@@ -48,7 +51,11 @@ export default class BooksContainer extends React.Component {
 
   // When this component mounts, search for the movie    
   componentDidMount() {
-    API.getBooks();
+    API.getBooks()
+      .then(res => {
+        this.setState({ books: res.data })
+        // console.log(res.data)
+      })
     // this.searchBooks("The lord of the rings");
     // axios.get("http://openlibrary.org/search.json?q=" + query)
     //     .then(res => {
@@ -58,7 +65,7 @@ export default class BooksContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.state.books);
     return (
       <div>
         Hello
