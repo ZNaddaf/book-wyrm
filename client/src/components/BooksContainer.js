@@ -49,42 +49,22 @@ export default class BooksContainer extends React.Component {
       .catch(err => console.log(err));
   };
 
-  // When this component mounts, search for the movie    
+  // When this component mounts, load all saved books    
   componentDidMount() {
     API.getBooks()
       .then(res => {
         this.setState({ books: res.data })
-        // console.log(res.data)
       })
-    // this.searchBooks("The lord of the rings");
-    // axios.get("http://openlibrary.org/search.json?q=" + query)
-    //     .then(res => {
-    //         console.log(res.data.docs[0]);
-    //         this.setState({ books: res.data });
-    //     })
   }
 
   render() {
     console.log(this.state.books);
     return (
       <div>
-        Hello
-                <SearchForm
+        <SearchForm
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit} />
-        {/* <Saved
-          details={this.state.books.map(result => {
-            return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
-              <div className="addBookBtn"><strong>Title: </strong>{result.title}</div>
-              <div><strong>Author: </strong>{result.author}</div>
-              <div><strong>Year Published: </strong>{result.year}</div>
-              <div><strong>ID: </strong>{result.id}</div>
-            </div>
-          })} /> */}
-        <Saved
-          details={this.state.books} />
-        <hr />
         <BookDetail
           details={this.state.results.map(result => {
             return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
