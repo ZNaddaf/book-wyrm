@@ -7,14 +7,14 @@ import { Container } from "reactstrap";
 
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
-import LogIn from "./pages/LogIn";
-import SignUp from "./pages/SignUp";
+// import LogIn from "./pages/LogIn";
+// import SignUp from "./pages/SignUp";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Loading from "./components/Loading";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/nav";
 import Footer from "./components/Footer";
 // import Home from "./views/Home";
 // import Profile from "./views/Profile";
@@ -38,13 +38,13 @@ const App = () => {
 
   return (
     <Router history={history}>
-      <div id="app" className="d-flex flex-column h-100">
+      <div id="app">
         <NavBar />
-        <Container className="flex-grow-1 mt-5">
+        <Container className="flex-grow-1 mt-5 bg-green-200">
           <Switch>
             <Route exact path="/home" component={HomePage} />
-            <Route exact path="/login" component={LogIn} />
-            <Route exact path="/signup" component={SignUp} />
+            {/* <Route exact path="/login" component={LogIn} />
+            <Route exact path="/signup" component={SignUp} /> */}
             <Route exact path="/search" component={Search} />
             <PrivateRoute path="/profile" component={Profile} />
             <Route path="/" exact component={LandingPage} />
