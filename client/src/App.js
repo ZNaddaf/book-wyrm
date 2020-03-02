@@ -30,11 +30,11 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-  // const { loading } = useAuth0();
+  const { loading } = useAuth0();
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <Router history={history}>
