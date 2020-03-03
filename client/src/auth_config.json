@@ -1,4 +1,5 @@
 {
   "domain": "book-wyrm.auth0.com",
-  "clientId": "MttdBGM1yhoLeaDbaD1Jhc0aiKRgv70e"
+  "clientId": "MttdBGM1yhoLeaDbaD1Jhc0aiKRgv70e",
+  "audience": "https://book-wyrm.auth0.com/api/v2/"
 }

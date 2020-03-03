@@ -1,15 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import Search from "./pages/Search";
-import Profile from "./pages/Profile";
-import PrivateRoute from "./components/PrivateRoute";
 import Loading from "./components/Loading";
-import NavBar from "./components/navbar";
-import Footer from "./components/Footer";
+import NavBar from "./components/nav2";
+// import Footer from "./components/Footer";
+// import { Container } from "reactstrap";
+// import Auth0 SPA 
 import { useAuth0 } from "./react-auth0-spa";
+// import the React Router components, and the Profile page component
+import { Router, Route, Switch } from "react-router-dom";
+import Profile from "./pages/Profile";
 import history from "./utils/history";
+// import the PrivateRoute component
+import PrivateRoute from "./components/PrivateRoute";
+// import the ExternalApi component
+import ExternalApi from "./components/ExternalApi";
+
 import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.jpg"
 
 
@@ -28,20 +35,23 @@ const App = () => {
   // }
 
   return (
-    <Router history={history}>
-      <div id="app">
-        <NavBar />
+    <div className="App">
+      <Router history={history}>
+        <header>
+          <NavBar />
+        </header>
         <div className="flex-grow-1 h-screen" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
           <Switch>
+            <PrivateRoute path="/profile" component={Profile} />
             <Route exact path="/home" component={HomePage} />
             <Route exact path="/search" component={Search} />
-            <PrivateRoute path="/profile" component={Profile} />
             <Route path="/" exact component={LandingPage} />
+            {/*add a route to the ExternalApi component */}
+            <PrivateRoute path="/external-api" component={ExternalApi} />
           </Switch>
         </div>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 };
 
