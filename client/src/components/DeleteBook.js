@@ -18,13 +18,15 @@ export default class DeleteBook extends React.Component {
             })
     }
 
-    // Delete book
+    // Delete book when "Delete" button is clicked.
     handleBtnClick(id) {
         console.log(id);
         API.deleteBook(id)
-            .then(res => API.getBooks())
-            .then(dbBook => dbBook.remove())
-            .then(dbBook => result.json(dbBook))
+            // Reload remaining books still in database.
+            .then(res =>
+                API.getBooks().then(res => {
+                    this.setState({ books: res.data })
+                }))
             .then(console.log("Book DELETED!"))
             .catch(err => console.log(err))
     };
