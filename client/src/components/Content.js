@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // import contentData from "../utils/contentData";
-import botm from "../assets/botm_mint.png";
+import botm from "../assets/botm_brown.png";
 
 class Content extends Component {
   render() {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import banner from "../assets/book_wyrm_banner.png";
+import banner from "../assets/banner_brown.png";
 
 const Hero = () => (
   <div className="text-center hero text-gray-100">
