@@ -23,9 +23,9 @@ export default class DeleteBook extends React.Component {
         console.log(id);
         API.deleteBook(id)
             .then(res => API.getBooks())
-            // .then(dbBook => dbBook.remove())
-            // .then(dbBook => result.json(dbBook))
-            // .then(console.log("Book saved!"))
+            .then(dbBook => dbBook.remove())
+            .then(dbBook => result.json(dbBook))
+            .then(console.log("Book DELETED!"))
             .catch(err => console.log(err))
     };
 
