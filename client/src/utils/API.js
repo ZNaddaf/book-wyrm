@@ -5,8 +5,12 @@ export default {
   search: function (query) {
     return axios.get(BASEURL + query);
   },
+  // Gets all books
+  getBooks: function () {
+    return axios.get("/api/books");
+  },
   // Gets the book with the given id
-  getBooks: function (id) {
+  getBook: function (id) {
     return axios.get("/api/books/" + id);
   },
   // Deletes the book with the given id
