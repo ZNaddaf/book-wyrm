@@ -5,15 +5,15 @@ import BooksContainer from "../components/BooksContainer";
 
 class Search extends Component {
 
-    render() {
-        return (
-            <div>
-                <h1>Search for Book</h1>
-                
-                <BooksContainer />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="text-gray-100">
+        <h1>Search for Book</h1>
+
+        <BooksContainer />
+      </div>
+    );
+  }
 }
 
 export default Search;

@@ -10,7 +10,7 @@ import NavBar from "./components/navbar";
 import Footer from "./components/Footer";
 import { useAuth0 } from "./react-auth0-spa";
 import history from "./utils/history";
-// import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.png"
+import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.jpg"
 
 
 // styles
@@ -21,17 +21,17 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-  const { loading } = useAuth0();
+  // const { loading } = useAuth0();
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />
+  // }
 
   return (
     <Router history={history}>
       <div id="app">
         <NavBar />
-        <div className="flex-grow-1">
+        <div className="flex-grow-1" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
           <Switch>
             <Route exact path="/home" component={HomePage} />
             <Route exact path="/search" component={Search} />

@@ -13,13 +13,11 @@ const NavBar = () => {
       returnTo: window.location.origin
     });
 
-  // const testAuth = false
-
   return (
-    <nav className="flex items-center justify-start flex-wrap bg-indigo-900 flex-shrink-0 text-white p-1">
+    <nav className="flex items-center flex-wrap bg-indigo-900 text-white p-1">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <img className="fill-current h-16 w-16 mr-2" src={BookWyrmLogo} alt="Book Wyrm Logo" />
-        <span class="font-semibold text-xl tracking-tight font-display">Book Wyrm</span>
+        <span className="font-semibold text-xl tracking-tight" style={{ fontFamily: "cursive" }}>Book Wyrm</span>
       </div>
       <ul className="flex text-white">
         <li className="flex-1 mr-2">
@@ -27,8 +25,8 @@ const NavBar = () => {
             to="/"
             className={
               window.location.pathname === "/"
-                ? "nav-link active; block mt-4 lg:inline-block lg:mt-0 hover:text-teal-200 mr-4"
-                : "block mt-4 lg:inline-block lg:mt-0 hover:text-teal-200 mr-4"
+                ? "block lg:inline-block hover:text-teal-200 mr-4"
+                : "block lg:inline-block hover:text-teal-200 mr-4"
             }
           >
             Landing
@@ -40,23 +38,23 @@ const NavBar = () => {
             to="/home"
             className={
               window.location.pathname === "/home"
-                ? "nav-link active; block mt-4 lg:inline-block lg:mt-0 hover:text-teal-200 mr-4"
-                : "block mt-4 lg:inline-block lg:mt-0 hover:text-teal-200 mr-4"
+                ? "block lg:inline-block hover:text-teal-200 mr-4"
+                : "block lg:inline-block hover:text-teal-200 mr-4"
             }
           >
             Home
           </Link>
         </li>
 
-        {isAuthenticated && (
+        {!isAuthenticated && (
           <div className="flex">
             <li className="flex-1 mr-2">
               <Link
                 to="/search"
                 className={
                   window.location.pathname === "/search"
-                    ? "block mt-4 lg:inline-block lg:mt-0 hover:text-teal-200 mr-4"
-                    : "block mt-4 lg:inline-block lg:mt-0 hover:text-teal-200 mr-4"
+                    ? "block lg:inline-block hover:text-teal-200 mr-4"
+                    : "block lg:inline-block hover:text-teal-200 mr-4"
                 }
               >
                 Search
@@ -68,8 +66,8 @@ const NavBar = () => {
                 to="/profile"
                 className={
                   window.location.pathname === "/profile"
-                    ? "block mt-4 lg:inline-block lg:mt-0 hover:text-teal-200 mr-4"
-                    : "block mt-4 lg:inline-block lg:mt-0 hover:text-teal-200 mr-4"
+                    ? "block lg:inline-block hover:text-teal-200 mr-4"
+                    : "block lg:inline-block hover:text-teal-200 mr-4"
                 }
               >
                 Profile
