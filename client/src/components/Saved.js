@@ -28,7 +28,7 @@ export default class SavedBooks extends React.Component {
                         <div className="addBookBtn"><strong>Title: </strong>{result.title}</div>
                         <div><strong>Author: </strong>{result.author}</div>
                         <div><strong>Year Published: </strong>{result.year}</div>
-                        <div><strong>ID: </strong>{result.id}</div>
+                        <div><strong>ID: </strong>{result.coverId}</div>
                     </div>
                 })}</div>
             </div>

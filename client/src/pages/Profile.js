@@ -1,11 +1,4 @@
 
-// import DeleteBook from "../components/DeleteBook"
-
-//       <DeleteBook
-
-//       //delete button from list
-//       />
-
 
 import React, { Fragment } from "react";
 import { useAuth0 } from "../react-auth0-spa";
