@@ -17,6 +17,8 @@ export default class DeleteBook extends React.Component {
                 this.setState({ books: res.data })
             })
     }
+
+    // Delete book
     handleBtnClick(id) {
         console.log(id);
         API.deleteBook(id)
