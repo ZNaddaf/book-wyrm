@@ -1,21 +1,23 @@
+// src/components/PrivateRoute.js
+
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { Route, withRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { useAuth0 } from "../react-auth0-spa";
 
-const PrivateRoute = ({ component: Component, path, location, ...rest }) => {
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
+const PrivateRoute = ({ component: Component, path, ...rest }) => {
+  const { loading, isAuthenticated, loginWithRedirect } = useAuth0();
 
   useEffect(() => {
+    if (loading || isAuthenticated) {
+      return;
+    }
     const fn = async () => {
-      if (!isAuthenticated) {
-        await loginWithRedirect({
-          appState: { targetUrl: location.pathname }
-        });
-      }
+      await loginWithRedirect({
+        appState: { targetUrl: path }
+      });
     };
     fn();
-  }, [isAuthenticated, loginWithRedirect, path, location]);
+  }, [loading, isAuthenticated, loginWithRedirect, path]);
 
   const render = props =>
     isAuthenticated === true ? <Component {...props} /> : null;
@@ -23,16 +25,4 @@ const PrivateRoute = ({ component: Component, path, location, ...rest }) => {
   return <Route path={path} render={render} {...rest} />;
 };
 
-PrivateRoute.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
-    .isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  }).isRequired,
-  path: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string)
-  ]).isRequired
-};
-
-export default withRouter(PrivateRoute);
+export default PrivateRoute;
