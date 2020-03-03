@@ -17,15 +17,15 @@ export default class DeleteBook extends React.Component {
                 this.setState({ books: res.data })
             })
     }
-
     handleBtnClick(result) {
-        console.log(result)
         API.deleteBook({
             id: result.cover_i
         })
             .then(res => API.getBooks())
+            .then(dbBook => dbBook.remove())
+            .then(dbBook => result.json(dbBook))
             // .then(console.log("Book saved!"))
-            .catch(err => console.log(err));
+            .catch(err => console.log(err))
     };
 
     render() {
@@ -34,7 +34,7 @@ export default class DeleteBook extends React.Component {
                 <div>{this.state.books.map(result => {
                     return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
                         <img src={URL + result.id + size} style={{ margin: "auto" }} />
-                        <div className="addBookBtn"><strong>Title: </strong>{result.title}</div>
+                        <div className="deleteBookBtn"><strong>Title: </strong>{result.title}</div>
                         <div><strong>Author: </strong>{result.author}</div>
                         <div><strong>Year Published: </strong>{result.year}</div>
                         <div><strong>ID: </strong>{result.id}</div>
