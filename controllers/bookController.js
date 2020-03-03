@@ -1,10 +1,7 @@
 const db = require("../models");
-import { useAuth0 } from "../react-auth0-spa";
-
 
 module.exports = {
   findAll: function (req, res) {
-    const { user } = useAuth0();
     console.log(req.query)
     db.Book.find(req.query)
       .then(dbBook => res.json(dbBook))
