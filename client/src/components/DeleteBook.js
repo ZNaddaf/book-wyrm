@@ -1,5 +1,6 @@
 import React from "react";
 import API from "../utils/API";
+import Profile from "../pages/Profile"
 const URL = "http://covers.openlibrary.org/b/id/";
 const size = "-M.jpg";
 
@@ -32,6 +33,7 @@ export default class DeleteBook extends React.Component {
     };
 
     render() {
+        console.log(Profile.userEmail)
         return (
             <div className="text-center" >
                 <div>{this.state.books.map(result => {

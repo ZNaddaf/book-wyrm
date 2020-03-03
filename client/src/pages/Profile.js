@@ -32,7 +32,7 @@ const Profile = () => {
       <Row>
         <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
       </Row>
-      <DeleteBook
+      <DeleteBook userEmail={user.email}
 
       //delete button from list
       />
