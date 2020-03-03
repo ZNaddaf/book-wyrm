@@ -4,8 +4,10 @@ import { Container, Row, Col } from "reactstrap";
 import Highlight from "../components/Highlight";
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
+import DeleteBook from "../components/DeleteBook"
 
 const Profile = () => {
+
   const { loading, user } = useAuth0();
 
   if (loading || !user) {
@@ -30,6 +32,10 @@ const Profile = () => {
       <Row>
         <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
       </Row>
+      <DeleteBook
+
+      //delete button from list
+      />
     </Container>
   );
 };

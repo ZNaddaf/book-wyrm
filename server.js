@@ -10,27 +10,14 @@ const db = require("./models")
 
 const PORT = process.env.PORT || 3001;
 
-app.use(morgan("dev"));
-app.use(express.static(join(__dirname, "client", "build")));
-
-app.use((_, res) => {
-  res.sendFile(join(__dirname, "client", "build", "index.html"));
-});
-
-// Add routes, both API and view
-app.use(routes);
-
 //If server doesn't work uncomment out line 19 and ocmment out 21-23
+// Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/reactbooks")
   .then(() => console.log("Database is connected"))
   .catch(err => console.log(err));
 // app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 
-//Start the API server
-app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -40,19 +27,17 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+app.use(morgan("dev"));
 
-// Connect to the Mongo DB
-
-db.Book.create({ title: "Great Gatsby" })
-  .then(dbBook => {
-    console.log(dbBook);
-  })
-  .catch(({ message }) => {
-    console.log(message)
-  })
+// Add routes, both API and view
+app.use("/api", routes);
 
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+//Start the API server
+app.listen(PORT, function () {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
