@@ -32,8 +32,8 @@ const Profile = () => {
       <Row>
         <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
       </Row>
-      <DeleteBook 
-        
+      <DeleteBook
+
       //delete button from list
       />
     </Container>
