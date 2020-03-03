@@ -31,7 +31,7 @@ const App = () => {
     <Router history={history}>
       <div id="app">
         <NavBar />
-        <div className="flex-grow-1" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
+        <div className="flex-grow-1 h-screen" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
           <Switch>
             <Route exact path="/home" component={HomePage} />
             <Route exact path="/search" component={Search} />
