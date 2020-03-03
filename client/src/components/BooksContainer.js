@@ -3,7 +3,7 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 
-const URL = "http://covers.openlibrary.org/b/id/";
+const URL = "https://covers.openlibrary.org/b/id/";
 const size = "-M.jpg";
 
 

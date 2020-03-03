@@ -1,6 +1,6 @@
 import React from "react";
 import API from "../utils/API";
-const URL = "http://covers.openlibrary.org/b/id/";
+const URL = "https://covers.openlibrary.org/b/id/";
 const size = "-M.jpg";
 
 export default class DeleteBook extends React.Component {
