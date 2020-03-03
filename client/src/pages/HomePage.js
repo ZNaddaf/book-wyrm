@@ -5,11 +5,10 @@ import Content from "../components/Content";
 
 const HomePage = () => (
 
-    <Fragment>
-        <Hero />
-        <hr />
-        <Content />
-    </Fragment>
+  <Fragment>
+    <Hero />
+    <Content />
+  </Fragment>
 );
 
 export default HomePage;
