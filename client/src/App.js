@@ -17,6 +17,7 @@ import PrivateRoute from "./components/PrivateRoute";
 // import the ExternalApi component
 import ExternalApi from "./components/ExternalApi";
 
+import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.jpg"
 
 
 // styles
@@ -27,11 +28,11 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-  const { loading } = useAuth0();
+  // const { loading } = useAuth0();
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />
+  // }
 
   return (
     <div className="App">
@@ -39,14 +40,16 @@ const App = () => {
         <header>
           <NavBar />
         </header>
-        <Switch>
-          <PrivateRoute path="/profile" component={Profile} />
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/search" component={Search} />
-          <Route path="/" exact component={LandingPage} />
-          {/*add a route to the ExternalApi component */}
-          <PrivateRoute path="/external-api" component={ExternalApi} />
-        </Switch>
+        <div className="flex-grow-1 h-screen" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
+          <Switch>
+            <PrivateRoute path="/profile" component={Profile} />
+            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/search" component={Search} />
+            <Route path="/" exact component={LandingPage} />
+            {/*add a route to the ExternalApi component */}
+            <PrivateRoute path="/external-api" component={ExternalApi} />
+          </Switch>
+        </div>
       </Router>
     </div>
   );
