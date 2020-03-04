@@ -12,7 +12,7 @@ export default class DeleteBook extends React.Component {
 
     // When this component mounts, load all saved books    
     componentDidMount() {
-        API.getBooks()
+        API.getUserBooks()
             .then(res => {
                 this.setState({ books: res.data })
             })
@@ -24,7 +24,7 @@ export default class DeleteBook extends React.Component {
         API.deleteBook(id)
             // Reload remaining books still in database.
             .then(res =>
-                API.getBooks().then(res => {
+                API.getUserBooks().then(res => {
                     this.setState({ books: res.data })
                 }))
             .then(console.log("Book DELETED!"))

@@ -9,6 +9,10 @@ export default {
   getBooks: function () {
     return axios.get("/api/books");
   },
+  // Gets a specific user's books
+  getUserBooks: function (email) {
+    return axios.get("/api/books" + email);
+  },
   // Gets the book with the given id
   getBook: function (id) {
     return axios.get("/api/books/" + id);
