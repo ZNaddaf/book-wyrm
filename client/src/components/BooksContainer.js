@@ -3,8 +3,8 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 
-const URL = "https://covers.openlibrary.org/b/id/";
-const size = "-M.jpg";
+
+
 
 
 export default class BooksContainer extends React.Component {
@@ -36,6 +36,7 @@ export default class BooksContainer extends React.Component {
   }
 
   handleBtnClick(bookData) {
+    
     console.log(bookData)
     API.saveBook({
       title: bookData.title_suggest,
@@ -64,21 +65,18 @@ export default class BooksContainer extends React.Component {
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit} />
-        <BookDetail
-          details={this.state.results.map(result => {
-            return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
-              <img src={URL + result.cover_i + size} style={{ margin: "auto" }} alt="" />
-              <div className="addBookBtn"><strong>Title: </strong>{result.title_suggest}</div>
-              <div><strong>Author: </strong>{result.author_name}</div>
-              <div><strong>Year Published: </strong>{result.first_publish_year}</div>
-              <div><strong>ID: </strong>{result.cover_i}</div>
-              <button className="addBookBtn" onClick={(event) => {
-                event.preventDefault();
-                this.handleBtnClick(result)
-              }}>Add Book</button>
-            </div>
-          })}
-        />
+        <div className="flex flex-row flex-wrap justify-center w-full mx-auto">
+        {this.state.results.map(result => {
+          return <BookDetail 
+            author_name={result.author_name}
+            cover_i={result.cover_i}
+            handleBtnClick={this.handleBtnClick}
+            title_suggest={result.title_suggest}
+            first_publish_year={result.first_publish_year}
+            />
+          }
+        )}
+        </div>
       </div>
     )
   }
