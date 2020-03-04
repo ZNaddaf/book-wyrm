@@ -36,9 +36,10 @@ export default class BooksContainer extends React.Component {
 
   handleBtnClick(bookData) {
 
-    console.log(bookData)
+    // console.log(bookData)
+    // console.log(bookData.userEmail)
     API.saveBook({
-      // email: this.props.userEmail,
+      email: bookData.userEmail,
       title: bookData.title_suggest,
       author: bookData.author_name,
       year: bookData.first_publish_year,
@@ -59,7 +60,7 @@ export default class BooksContainer extends React.Component {
 
   render() {
     // console.log(this.state.books);
-    console.log(this.props.user.email)
+    console.log(this.props.email)
     return (
       <div>
         <SearchForm
@@ -69,6 +70,7 @@ export default class BooksContainer extends React.Component {
         <div className="flex flex-row flex-wrap justify-center w-full mx-auto">
           {this.state.results.map(result => {
             return <BookDetail
+              userEmail={this.props.email}
               author_name={result.author_name}
               cover_i={result.cover_i}
               handleBtnClick={this.handleBtnClick}

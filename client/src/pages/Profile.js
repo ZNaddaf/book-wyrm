@@ -5,12 +5,9 @@ import { useAuth0 } from "../react-auth0-spa";
 import DeleteBook from "../components/DeleteBook"
 import { Container, Row, Col } from "reactstrap";
 // import BooksContainer from "../components/BooksContainer";
-const { user } = useAuth0();
-
 
 const Profile = () => {
   const { loading, user } = useAuth0();
-
 
   if (loading || !user) {
     return <div>Loading...</div>;
@@ -44,5 +41,5 @@ const Profile = () => {
   );
 };
 
-export const userInfo = { user };
+// export const userInfo = { user };
 export default Profile;
