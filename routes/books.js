@@ -16,7 +16,7 @@ router
 // Matches with "/api/books/:email"
 router
   .route("/:email")
-  .get(booksController.find(email))
+  .get(booksController.find)
   .delete(booksController.remove);
 
 module.exports = router;

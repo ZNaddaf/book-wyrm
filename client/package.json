@@ -2,7 +2,7 @@
   "name": "client",
   "version": "1.0.0",
   "main": "index.js",
-  "proxy": "https://localhost:3001/",
+  "proxy": "http://localhost:3001/",
   "scripts": {
     "start": "react-scripts start",
     "build:css": "tailwind build src/style.css -o public/style.css",
