@@ -45,13 +45,13 @@ export default class BooksContainer extends React.Component {
       year: bookData.first_publish_year,
       coverId: bookData.cover_i
     })
-      .then(res => API.getUserBooks())
+      .then(res => API.getBooks())
       .catch(err => console.log(err));
   };
 
   // When this component mounts, load all saved books    
   componentDidMount() {
-    API.getUserBooks()
+    API.getBooks()
       .then(res => {
         this.setState({ books: res.data })
       })
