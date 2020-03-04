@@ -32,7 +32,7 @@ export default class DeleteBook extends React.Component {
     };
 
     render() {
-        console.log(Profile.userEmail)
+        console.log(this.props.userEmail)
         return (
             <div className="text-center" >
                 <div>{this.state.books.map(result => {

@@ -3,6 +3,13 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 
+// Importing Auth0 and using the consts below to save user with books.
+// import Profile from "../pages/Profile";
+// import { useAuth0 } from "../react-auth0-spa";
+// const { loading, user } = useAuth0();
+// const email = Profile.user.email;
+
+
 const URL = "https://covers.openlibrary.org/b/id/";
 const size = "-M.jpg";
 
@@ -36,8 +43,9 @@ export default class BooksContainer extends React.Component {
   }
 
   handleBtnClick(bookData) {
-    console.log(bookData)
+    // console.log(bookData)
     API.saveBook({
+      // email: this.props.userEmail,
       title: bookData.title_suggest,
       author: bookData.author_name,
       year: bookData.first_publish_year,
@@ -57,7 +65,8 @@ export default class BooksContainer extends React.Component {
 
 
   render() {
-    console.log(this.state.books);
+    // console.log(this.state.books);
+    console.log(this.props.user.email)
     return (
       <div>
         <SearchForm
@@ -74,7 +83,7 @@ export default class BooksContainer extends React.Component {
               <div><strong>ID: </strong>{result.cover_i}</div>
               <button className="addBookBtn" onClick={(event) => {
                 event.preventDefault();
-                this.handleBtnClick(result)
+                this.handleBtnClick(result, this.props)
               }}>Add Book</button>
             </div>
           })}
