@@ -36,6 +36,7 @@ export default class BooksContainer extends React.Component {
   }
 
   handleBtnClick(bookData) {
+    
     console.log(bookData)
     API.saveBook({
       title: bookData.title_suggest,
@@ -64,6 +65,7 @@ export default class BooksContainer extends React.Component {
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit} />
+        <div className="flex flex-wrap justify-center ">
         <BookDetail
           details={this.state.results.map(result => {
             return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
@@ -79,6 +81,7 @@ export default class BooksContainer extends React.Component {
             </div>
           })}
         />
+        </div>
       </div>
     )
   }
