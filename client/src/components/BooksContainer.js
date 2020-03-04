@@ -3,9 +3,8 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 
-
-
-
+const URL = "https://covers.openlibrary.org/b/id/";
+const size = "-M.jpg";
 
 export default class BooksContainer extends React.Component {
   state = {
@@ -36,21 +35,23 @@ export default class BooksContainer extends React.Component {
   }
 
   handleBtnClick(bookData) {
-    
-    console.log(bookData)
+
+    // console.log(bookData)
+    // console.log(bookData.userEmail)
     API.saveBook({
+      email: bookData.userEmail,
       title: bookData.title_suggest,
       author: bookData.author_name,
       year: bookData.first_publish_year,
       coverId: bookData.cover_i
     })
-      .then(res => API.getBooks())
+      .then(res => API.getUserBooks())
       .catch(err => console.log(err));
   };
 
   // When this component mounts, load all saved books    
   componentDidMount() {
-    API.getBooks()
+    API.getUserBooks()
       .then(res => {
         this.setState({ books: res.data })
       })
@@ -58,7 +59,8 @@ export default class BooksContainer extends React.Component {
 
 
   render() {
-    console.log(this.state.books);
+    // console.log(this.state.books);
+    console.log(this.props.email)
     return (
       <div>
         <SearchForm
@@ -66,18 +68,19 @@ export default class BooksContainer extends React.Component {
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit} />
         <div className="flex flex-row flex-wrap justify-center w-full mx-auto">
-        {this.state.results.map(result => {
-          return <BookDetail 
-            author_name={result.author_name}
-            cover_i={result.cover_i}
-            handleBtnClick={this.handleBtnClick}
-            title_suggest={result.title_suggest}
-            first_publish_year={result.first_publish_year}
+          {this.state.results.map(result => {
+            return <BookDetail
+              userEmail={this.props.email}
+              author_name={result.author_name}
+              cover_i={result.cover_i}
+              handleBtnClick={this.handleBtnClick}
+              title_suggest={result.title_suggest}
+              first_publish_year={result.first_publish_year}
             />
           }
-        )}
+          )}
         </div>
-      </div>
+      </div >
     )
   }
 }
