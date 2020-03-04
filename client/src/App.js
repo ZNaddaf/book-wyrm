@@ -35,12 +35,12 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className="App min-h-screen">
       <Router history={history}>
         <header>
           <NavBar />
         </header>
-        <div className="flex-grow-1 h-screen" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
+        <div className="bg-scroll" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
           <Switch>
             <PrivateRoute path="/profile" component={Profile} />
             <Route exact path="/home" component={HomePage} />

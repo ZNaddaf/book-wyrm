@@ -4,7 +4,7 @@ const size = "-M.jpg";
 function BookDetail(props) {
   // console.log(props)
   return (
-    <div className="text-center w-48 h-64 m-16">
+    <div className="text-center w-48 h-auto mx-auto my-4 bg-gray-700">
       <img src={URL + props.cover_i + size} style={{ margin: "auto" }} alt="" />
       <div className="addBookBtn"><strong>Title: </strong>{props.title_suggest}</div>
       <div><strong>Author: </strong>{props.author_name}</div>
