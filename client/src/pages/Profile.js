@@ -19,11 +19,15 @@ const Profile = () => {
     <Container className="mb-5">
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md>
-          <h2>{user.name}</h2>
-          <p className="lead text-muted">{user.email}</p>
+          <h1>Welcome {user.email} to Your Reading List</h1>
         </Col>
       </Row>
-      <Row>
+      <Row className="align-items-center profile-header mb-5 text-center text-md-left">
+        <Col md>
+          <h2>{user.email}'s Saved Books </h2>
+        </Col>
+      </Row>
+      <Row className="align-items-center">
         <DeleteBook userEmail={user.email}
         //delete button from list
         />
