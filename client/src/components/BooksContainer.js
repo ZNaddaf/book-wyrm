@@ -44,7 +44,6 @@ export default class BooksContainer extends React.Component {
       year: bookData.first_publish_year,
       coverId: bookData.cover_i
     })
-      .then(res => API.getUserBooks())
       .catch(err => console.log(err));
   };
 
@@ -80,17 +79,9 @@ export default class BooksContainer extends React.Component {
       year: bookData.first_publish_year,
       coverId: bookData.cover_i
     })
-      .then(res => API.getBooks())
       .catch(err => console.log(err));
   };
 
-  // When this component mounts, load all saved books    
-  componentDidMount() {
-    API.getUserBooks()
-      .then(res => {
-        this.setState({ books: res.data })
-      })
-  }
 
   // Rendering Search bars (title/author) to page
   render() {
