@@ -1,9 +1,13 @@
 
 import React from "react";
+
+// auth0 functionality (loading, user) imported from Auth0SPA
 import { useAuth0 } from "../react-auth0-spa";
+
+// Delete book componenent
 import DeleteBook from "../components/DeleteBook"
 import { Container, Row, Col } from "reactstrap";
-// import BooksContainer from "../components/BooksContainer";
+
 
 const Profile = () => {
   const { loading, user } = useAuth0();
@@ -27,18 +31,14 @@ const Profile = () => {
       </Row>
       <Row className="align-items-center">
         <DeleteBook {...user}
-        //delete button from list
         />
       </Row>
-      {/* <Row style={{ display: "none" }}>
-        <BooksContainer userEmail={user.email}
-        />
-      </Row> */}
+
 
     </Container>
 
   );
 };
 
-// export const userInfo = { user };
+
 export default Profile;
