@@ -25,19 +25,20 @@ export default class DeleteBook extends React.Component {
         API.deleteBook(id)
             // Reload remaining books still in database.
             .then(res =>
-                API.getBook().then(res => {
+                API.getBook(this.props.email).then(res => {
                     this.setState({ books: res.data })
                 }))
-            .then(console.log("Book DELETED!"))
+            // .then(console.log("Book DELETED!"))
             .catch(err => console.log(err))
     };
 
     render() {
+        // console.log(this.props.email)
         return (
             <div className="text-center" >
                 <div>{this.state.books.map(result => {
                     return <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
-                        <img src={URL + result.coverId + size} style={{ margin: "auto" }} />
+                        <img src={URL + result.coverId + size} style={{ margin: "auto" }} alt="Book Cover" />
                         <div className="deleteBookBtn"><strong>Title: </strong>{result.title}</div>
                         <div><strong>Author: </strong>{result.author}</div>
                         <div><strong>Year Published: </strong>{result.year}</div>
