@@ -8,7 +8,8 @@ export default class BooksContainer extends React.Component {
   state = {
     results: [],
     books: [],
-    search: ""
+    search: "",
+    authorSearch: ""
   }
 
   // Title Search ====================== 
@@ -60,15 +61,14 @@ export default class BooksContainer extends React.Component {
 
   handleInputChange2 = event => {
     const value = event.target.value;
-    const name = event.target.name;
     this.setState({
-      [name]: value
+      authorSearch: value
     });
   };
 
   handleFormSubmit2 = event => {
     event.preventDefault();
-    this.searchAuthor(this.state.search);
+    this.searchAuthor(this.state.authorSearch);
   }
 
   handleBtnClick2(bookData) {
@@ -92,7 +92,7 @@ export default class BooksContainer extends React.Component {
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit} />
         <Author
-          value={this.state.search}
+          value={this.state.authorSearch}
           handleInputChange={this.handleInputChange2}
           handleFormSubmit={this.handleFormSubmit2} />
 
