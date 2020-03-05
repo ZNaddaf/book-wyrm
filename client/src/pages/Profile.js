@@ -17,8 +17,6 @@ import DeleteBook from "../components/DeleteBook"
 import banner from "../assets/profile_banner.png";
 import { Container, Row, Col } from "reactstrap";
 
-.
-
 const Profile = () => {
   const { loading, user } = useAuth0();
 
