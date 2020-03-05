@@ -4,12 +4,6 @@ import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 import Author from "../components/Author"
 
-// const URL = "https://covers.openlibrary.org/b/id/";
-// const size = "-M.jpg";
-
-
-
-
 export default class BooksContainer extends React.Component {
   state = {
     results: [],
@@ -43,8 +37,6 @@ export default class BooksContainer extends React.Component {
 
   handleBtnClick(bookData) {
 
-    // console.log(bookData)
-    // console.log(bookData.userEmail)
     API.saveBook({
       email: bookData.userEmail,
       title: bookData.title_suggest,
@@ -82,8 +74,6 @@ export default class BooksContainer extends React.Component {
 
   handleBtnClick2(bookData) {
 
-    // console.log(bookData)
-    // console.log(bookData.userEmail)
     API.saveBook({
       email: bookData.userEmail,
       title: bookData.title_suggest,
@@ -108,8 +98,6 @@ export default class BooksContainer extends React.Component {
 
   // Rendering Search bars (title/author) to page
   render() {
-    // console.log(this.state.books);
-    // console.log(this.props.email)
     return (
       <div>
         <SearchForm
