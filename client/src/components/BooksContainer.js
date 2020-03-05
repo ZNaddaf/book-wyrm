@@ -73,7 +73,6 @@ export default class BooksContainer extends React.Component {
   }
 
   handleBtnClick2(bookData) {
-
     API.saveBook({
       email: bookData.userEmail,
       title: bookData.title_suggest,
@@ -85,7 +84,6 @@ export default class BooksContainer extends React.Component {
       .catch(err => console.log(err));
   };
 
-
   // When this component mounts, load all saved books    
   componentDidMount() {
     API.getUserBooks()
@@ -93,8 +91,6 @@ export default class BooksContainer extends React.Component {
         this.setState({ books: res.data })
       })
   }
-
-
 
   // Rendering Search bars (title/author) to page
   render() {
