@@ -6,11 +6,16 @@ router.route("/")
   .get(booksController.findAll)
   .post(booksController.create);
 
-// Matches with "/api/books/:id"
+// // Matches with "/api/books/:id"
+// router
+//   .route("/:id")
+//   .get(booksController.findById)
+//   .delete(booksController.remove);
+
+// Matches with "/api/books/:email"
 router
-  .route("/:id")
-  .get(booksController.findById)
+  .route("/:email")
+  .get(booksController.find)
   .delete(booksController.remove);
-  // .put(booksController.update)
 
 module.exports = router;

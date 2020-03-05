@@ -28,7 +28,7 @@ const Profile = () => {
         </Col>
       </Row>
       <Row className="align-items-center">
-        <DeleteBook userEmail={user.email}
+        <DeleteBook {...user}
         //delete button from list
         />
       </Row>
