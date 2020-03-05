@@ -1,5 +1,6 @@
 import React from "react";
 
+//Author Search Bar
 function Author(props) {
   return (
     <form className="flex flex-col mt-6 mb-4 rounded m-auto h-auto w-1/2 bg-yellow-900 text-gray-100 shadow-lg">

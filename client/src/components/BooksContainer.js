@@ -10,6 +10,8 @@ export default class BooksContainer extends React.Component {
     books: [],
     search: ""
   }
+
+  // Title Search ====================== 
   searchBooks = query => {
     API.search(query)
       .then(res => {
@@ -19,6 +21,7 @@ export default class BooksContainer extends React.Component {
       })
       .catch(err => console.log(err));
   }
+  
   handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
@@ -34,8 +37,6 @@ export default class BooksContainer extends React.Component {
 
   handleBtnClick(bookData) {
 
-    // console.log(bookData)
-    // console.log(bookData.userEmail)
     API.saveBook({
       email: bookData.userEmail,
       title: bookData.title_suggest,
@@ -43,11 +44,10 @@ export default class BooksContainer extends React.Component {
       year: bookData.first_publish_year,
       coverId: bookData.cover_i
     })
-      .then(res => API.getBooks())
       .catch(err => console.log(err));
   };
 
-  //Author search
+  // Author search =====================
   searchAuthor = query => {
     API.searchAuthor(query)
       .then(res => {
@@ -72,9 +72,6 @@ export default class BooksContainer extends React.Component {
   }
 
   handleBtnClick2(bookData) {
-
-    // console.log(bookData)
-    // console.log(bookData.userEmail)
     API.saveBook({
       email: bookData.userEmail,
       title: bookData.title_suggest,
@@ -82,24 +79,12 @@ export default class BooksContainer extends React.Component {
       year: bookData.first_publish_year,
       coverId: bookData.cover_i
     })
-      .then(res => API.getBooks())
       .catch(err => console.log(err));
   };
 
-  //^^^^^^Author search
 
-  // When this component mounts, load all saved books    
-  componentDidMount() {
-    API.getBooks()
-      .then(res => {
-        this.setState({ books: res.data })
-      })
-  }
-
-
+  // Rendering Search bars (title/author) to page
   render() {
-    // console.log(this.state.books);
-    console.log(this.props.email)
     return (
       <div>
         <SearchForm

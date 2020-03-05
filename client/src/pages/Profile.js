@@ -1,13 +1,16 @@
 
 import React from "react";
+
+// auth0 functionality (loading, user) imported from Auth0SPA
 import { useAuth0 } from "../react-auth0-spa";
+
+// Delete book componenent
 import DeleteBook from "../components/DeleteBook"
 import { Container, Row, Col } from "reactstrap";
 
 
 const Profile = () => {
   const { loading, user } = useAuth0();
-
 
   if (loading || !user) {
     return <div>Loading...</div>;
@@ -27,10 +30,10 @@ const Profile = () => {
         </Col>
       </Row>
       <Row className="align-items-center">
-        <DeleteBook userEmail={user.email}
-        //delete button from list
+        <DeleteBook {...user}
         />
       </Row>
+
 
     </Container>
 
