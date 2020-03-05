@@ -2,7 +2,6 @@ import React from 'react';
 const URL = "https://covers.openlibrary.org/b/id/";
 const size = "-M.jpg";
 function BookDetail(props) {
-    // console.log(props)
     return (
         <div className="text-center ">
               <div style={{ marginTop: "10px", border: "solid", width: "250px" }}>
