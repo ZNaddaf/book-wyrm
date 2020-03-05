@@ -9,12 +9,8 @@ function Search(props) {
   const { user } = useAuth0();
   // console.log(user.email)
   return (
-    <div className="text-gray-100">
-      <h1>Search for Book</h1>
-
+    <div>
       <BooksContainer {...user} />
-      {/* <BooksContainer /> */}
-
     </div>
   );
 

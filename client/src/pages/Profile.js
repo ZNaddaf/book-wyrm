@@ -1,6 +1,5 @@
 
 import React from "react";
-// import React, { Fragment } from "react";
 import { useAuth0 } from "../react-auth0-spa";
 import DeleteBook from "../components/DeleteBook"
 import { Container, Row, Col } from "reactstrap";
