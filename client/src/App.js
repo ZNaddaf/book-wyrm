@@ -28,12 +28,12 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-  const { loading } = useAuth0();
-  // const { user } = useAuth0();
+  // const { loading } = useAuth0();
 
-  if (loading) {
-    return <Loading />
-  }
+
+  // if (loading) {
+  //   return <Loading />
+  // }
 
   // console.log(user.email)
 
@@ -43,7 +43,7 @@ const App = () => {
         <header>
           <NavBar />
         </header>
-        <div className="flex-grow-1 h-screen" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
+        <div className="flex-grow-1 h-screen p-5" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
           <Switch>
             <PrivateRoute path="/profile" component={Profile} />
             <Route exact path="/home" component={HomePage} />
