@@ -7,13 +7,13 @@ module.exports = {
       .then(dbBook => res.json(dbBook))
       .catch(err => res.status(422).json(err));
   },
-  findById: function (req, res) {
-    db.Book.findById(req.params.id)
-      .then(dbBook => res.json(dbBook))
-      .catch(err => res.status(422).json(err));
-  },
+  // findById: function (req, res) {
+  //   db.Book.findById(req.params.id)
+  //     .then(dbBook => res.json(dbBook))
+  //     .catch(err => res.status(422).json(err));
+  // },
   find: function (req, res) {
-    db.Book.find({ email: req.email })
+    db.Book.find({ email: req.params.email })
       .then(dbBook => res.json(dbBook))
       .catch(err => res.status(422).json(err));
   },
@@ -26,9 +26,13 @@ module.exports = {
 
   remove: function (req, res) {
     console.log("bam")
-    db.Book.findById({ _id: req.params.id })
-      .then(dbBook => dbBook.remove())
-      .then(dbBook => res.json(dbBook))
+    db.Book.find({ _id: req.params.id })
+      .remove({ _id: req.params.id })
+      // .then(dbBook => {
+      //   console.log(dbBook);
+      //   dbBook.remove()
+      // })
+      // .then(dbBook => res.json(dbBook))
       .catch(err => res.status(422).json(err));
   }
 }
