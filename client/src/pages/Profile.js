@@ -14,7 +14,7 @@ import DeleteBook from "../components/DeleteBook"
 /////////////////////////////////////
 // ability to use profile banner image
 /////////////////////////////////////
-import banner from "../assets/banner_green.png";
+import banner from "../assets/profile_banner.png";
 import { Container, Row, Col } from "reactstrap";
 
 
