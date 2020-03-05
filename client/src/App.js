@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import Search from "./pages/Search";
 import Loading from "./components/Loading";
-import NavBar from "./components/nav2";
+import NavBar from "./components/navbar";
 // import Footer from "./components/Footer";
 // import { Container } from "reactstrap";
 // import Auth0 SPA 
@@ -28,15 +28,6 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-  // const { loading } = useAuth0();
-
-
-  // if (loading) {
-  //   return <Loading />
-  // }
-
-  // console.log(user.email)
-
   return (
     <div className="App">
       <Router history={history}>

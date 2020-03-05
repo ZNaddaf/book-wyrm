@@ -3,7 +3,7 @@ import React from "react";
 //Author Search Bar
 function Author(props) {
   return (
-    <form className="flex flex-col mt-6 mb-4 rounded m-auto h-auto w-1/2 bg-yellow-900 text-gray-100 shadow-lg">
+    <form className="flex flex-col mb-4 m-auto h-auto text-gray-100">
       <button onClick={props.handleFormSubmit} className="btn btn=primary mt-1 text-lg font-semibold">
         Author:
       </button>
