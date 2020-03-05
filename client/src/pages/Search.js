@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-// import SearchForm from "../components/SearchForm";
-// import API from "../utils/API";
 import BooksContainer from "../components/BooksContainer";
-import OldLibraryWallpaper from "../assets/OldLibraryWallpaper.jpg"
 
 class Search extends Component {
 
