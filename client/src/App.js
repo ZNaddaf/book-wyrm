@@ -4,20 +4,16 @@ import LandingPage from './pages/LandingPage';
 import Search from "./pages/Search";
 import Loading from "./components/Loading";
 import NavBar from "./components/nav2";
-// import Footer from "./components/Footer";
-// import { Container } from "reactstrap";
-// import Auth0 SPA 
 import { useAuth0 } from "./react-auth0-spa";
-// import the React Router components, and the Profile page component
 import { Router, Route, Switch } from "react-router-dom";
 import Profile from "./pages/Profile";
 import history from "./utils/history";
-// import the PrivateRoute component
 import PrivateRoute from "./components/PrivateRoute";
-// import the ExternalApi component
 import ExternalApi from "./components/ExternalApi";
-
 import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.jpg"
+
+
+
 
 
 // styles
