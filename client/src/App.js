@@ -30,9 +30,12 @@ initFontAwesome();
 const App = () => {
   // const { loading } = useAuth0();
 
+
   // if (loading) {
   //   return <Loading />
   // }
+
+  // console.log(user.email)
 
   return (
     <div className="App">

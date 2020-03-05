@@ -8,6 +8,8 @@ import Author from "../components/Author"
 // const size = "-M.jpg";
 
 
+
+
 export default class BooksContainer extends React.Component {
   state = {
     results: [],
@@ -50,7 +52,7 @@ export default class BooksContainer extends React.Component {
       year: bookData.first_publish_year,
       coverId: bookData.cover_i
     })
-      .then(res => API.getBooks())
+      .then(res => API.getUserBooks())
       .catch(err => console.log(err));
   };
 
@@ -96,7 +98,7 @@ export default class BooksContainer extends React.Component {
 
   // When this component mounts, load all saved books    
   componentDidMount() {
-    API.getBooks()
+    API.getUserBooks()
       .then(res => {
         this.setState({ books: res.data })
       })
@@ -107,7 +109,7 @@ export default class BooksContainer extends React.Component {
   // Rendering Search bars (title/author) to page
   render() {
     // console.log(this.state.books);
-    console.log(this.props.email)
+    // console.log(this.props.email)
     return (
       <div>
         <SearchForm
