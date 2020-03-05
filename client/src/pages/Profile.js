@@ -14,9 +14,10 @@ import DeleteBook from "../components/DeleteBook"
 /////////////////////////////////////
 // ability to use profile banner image
 /////////////////////////////////////
-import banner from "../assets/banner_green.png";
+import banner from "../assets/profile_banner.png";
 import { Container, Row, Col } from "reactstrap";
 
+.
 
 const Profile = () => {
   const { loading, user } = useAuth0();
@@ -30,11 +31,6 @@ const Profile = () => {
     <Container className="mb-5">
       <Row>
         <img className="mb-3 app-banner" src={banner} alt="profile banner" />
-      </Row>
-      <Row className="align-items-center profile-header mb-5 text-center text-md-left">
-        <Col md>
-          <h1>Welcome {user.email} to Your Reading List</h1>
-        </Col>
       </Row>
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md>
