@@ -7,12 +7,15 @@ import Author from "../components/Author"
 // const URL = "https://covers.openlibrary.org/b/id/";
 // const size = "-M.jpg";
 
+
 export default class BooksContainer extends React.Component {
   state = {
     results: [],
     books: [],
     search: ""
   }
+
+  // Title Search ====================== 
   searchBooks = query => {
     API.search(query)
       .then(res => {
@@ -51,7 +54,7 @@ export default class BooksContainer extends React.Component {
       .catch(err => console.log(err));
   };
 
-  //Author search
+  // Author search =====================
   searchAuthor = query => {
     API.searchAuthor(query)
       .then(res => {
@@ -90,7 +93,6 @@ export default class BooksContainer extends React.Component {
       .catch(err => console.log(err));
   };
 
-  //^^^^^^Author search
 
   // When this component mounts, load all saved books    
   componentDidMount() {
@@ -101,6 +103,8 @@ export default class BooksContainer extends React.Component {
   }
 
 
+
+  // Rendering Search bars (title/author) to page
   render() {
     // console.log(this.state.books);
     console.log(this.props.email)
