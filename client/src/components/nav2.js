@@ -9,7 +9,7 @@ const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
-    <div className="lg:justify-start justify-center flex items-center  text-white p-1 font-semibold text-xl tracking-tight" style={{ fontFamily: "cursive", backgroundColor: "#313b23" }}>
+    <div className="lg:justify-start justify-center flex items-center text-white p-1 font-semibold text-xl tracking-tight" style={{ fontFamily: "cursive", backgroundColor: "#313b23" }}>
       <Link to="/">
         <img className="fill-current h-8 w-8" src={BookWyrmLogo} alt="Book Wyrm Logo" />
       </Link>&nbsp;
