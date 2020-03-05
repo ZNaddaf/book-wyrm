@@ -4,14 +4,15 @@ const BASEURL = "https://openlibrary.org/search.json?title=";
 const BASEURL2 = "https://openlibrary.org/search.json?author=";
 
 export default {
+  //Title
   search: function (query) {
     return axios.get(BASEURL + query);
   },
+
   //Author
   searchAuthor: function (query) {
     return axios.get(BASEURL2 + query);
   },
-
 
   // Gets all books
   getBooks: function () {
