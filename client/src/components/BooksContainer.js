@@ -57,7 +57,7 @@ export default class BooksContainer extends React.Component {
 
   render() {
     // console.log(this.state.books);
-    console.log(this.props.email)
+    // console.log(this.props.email)
     return (
       <div>
         <SearchForm
