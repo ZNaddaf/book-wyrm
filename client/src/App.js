@@ -40,7 +40,7 @@ const App = () => {
         <header>
           <NavBar />
         </header>
-        <div className="flex-grow-1 h-screen p-5" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
+        <div className="bg-scroll h-screen p-5" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
           <Switch>
             <PrivateRoute path="/profile" component={Profile} />
             <Route exact path="/home" component={HomePage} />

@@ -4,7 +4,7 @@ function SearchForm(props) {
   return (
     <form className="flex flex-col mt-6 mb-4 rounded m-auto h-auto w-1/2 bg-yellow-900 text-gray-100 shadow-lg">
       <button onClick={props.handleFormSubmit} className="btn btn=primary mt-1 text-lg font-semibold">
-        Search:
+        Title:
       </button>
       <input
         onChange={props.handleInputChange}

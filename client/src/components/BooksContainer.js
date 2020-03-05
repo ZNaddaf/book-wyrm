@@ -4,9 +4,6 @@ import SearchForm from "../components/SearchForm";
 import BookDetail from "./BookDetail";
 import Author from "../components/Author"
 
-// const URL = "https://covers.openlibrary.org/b/id/";
-// const size = "-M.jpg";
-
 export default class BooksContainer extends React.Component {
   state = {
     results: [],
@@ -109,11 +106,12 @@ export default class BooksContainer extends React.Component {
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit} />
-        <Author 
+        <Author
           value={this.state.search}
           handleInputChange={this.handleInputChange2}
           handleFormSubmit={this.handleFormSubmit2} />
-        <div className="flex flex-row flex-wrap justify-center w-full mx-auto">
+
+        <div className="flex flex-row flex-wrap gap-3">
           {this.state.results.map(result => {
             return <BookDetail
               userEmail={this.props.email}
