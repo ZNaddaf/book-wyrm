@@ -1,7 +1,9 @@
 import React from "react";
 import banner from "../assets/search_banner_green.png";
 
+/////////////////////////////////////
 // SearchForm  
+/////////////////////////////////////
 function SearchForm(props) {
   return (
     <div>
