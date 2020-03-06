@@ -17,7 +17,7 @@ import PrivateRoute from "./components/PrivateRoute";
 // import the ExternalApi component
 import ExternalApi from "./components/ExternalApi";
 
-import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.jpg"
+// import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.jpg"
 
 
 // styles
@@ -34,7 +34,8 @@ const App = () => {
         <header>
           <NavBar />
         </header>
-        <div className="bg-scroll h-screen p-5" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
+        <div>
+          {/*  className="bg-scroll h-screen p-5" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}> */}
           <Switch>
             <PrivateRoute path="/profile" component={Profile} />
             <Route exact path="/home" component={HomePage} />

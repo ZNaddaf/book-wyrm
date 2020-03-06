@@ -100,7 +100,7 @@ export default class BooksContainer extends React.Component {
             handleFormSubmit={this.handleFormSubmit2} />
         </div>
 
-        <div className="flex flex-row flex-wrap gap-3">
+        <div className="flex flex-row flex-wrap">
           {this.state.results.map(result => {
             return <BookDetail
               userEmail={this.props.email}
