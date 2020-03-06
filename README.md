@@ -5,11 +5,16 @@
 
 [Hosted by Heroku](https://book-wyrm.herokuapp.com/)
 
-## User Story
+## Application GIF
+![screenshot](/short_gif.gif)
 
+
+## User Story
+```
 * As someone who enjoys reading books, I want to search for new books, so that I can find new stuff to read.
 * As someone who likes books, I want to see information about different books, so i can pick the ones I like.
 * As a person who enjoys reading, I want to keep a running list of books, so that I always have something to read. 
+```
 
 ## Business Context
 
@@ -34,6 +39,13 @@ The user is then able to:
   * Add books to a reading list.
 
   * Search for new books from a database
+
+## Screenshots
+![screenshot](/home.png)
+![screenshot](/login.png)
+![screenshot](/auth0.png)
+![screenshot](/search.png)
+![screenshot](/profile.png)
 
 
 ## Wireframes
