@@ -28,7 +28,7 @@ const Profile = () => {
     <div className="p-6">
       <div className="m-auto w-3/4 md:w-1/3 shadow-xl border rounded" style={{ backgroundColor: "#313b23", borderColor: "#e2e8f05e" }}>
         <img className="border-gray-100" style={{ borderBottomWidth: "1px", borderRadius: "25px 25px 0px 0px" }} src={banner} alt="profile banner" />
-        <h2 className="p-3 align-center text-center text-md-left" >{user.email}'s Saved Books:</h2>
+        <h2 className="p-3 align-center font-semibold text-center text-md-left text-gray-100" >{user.email}'s Saved Books:</h2>
       </div>
 
       <DeleteBook {...user} />
