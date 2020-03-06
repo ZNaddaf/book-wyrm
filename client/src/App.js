@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import Search from "./pages/Search";
 import Loading from "./components/Loading";
-import NavBar from "./components/nav2";
+import NavBar from "./components/navbar";
 // import Footer from "./components/Footer";
 // import { Container } from "reactstrap";
 // import Auth0 SPA 
@@ -17,7 +17,7 @@ import PrivateRoute from "./components/PrivateRoute";
 // import the ExternalApi component
 import ExternalApi from "./components/ExternalApi";
 
-import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.jpg"
+// import OldLibraryWallpaper from "./assets/OldLibraryWallpaper.jpg"
 
 
 // styles
@@ -28,22 +28,14 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-  // const { loading } = useAuth0();
-
-
-  // if (loading) {
-  //   return <Loading />
-  // }
-
-  // console.log(user.email)
-
   return (
     <div className="App">
       <Router history={history}>
         <header>
           <NavBar />
         </header>
-        <div className="bg-fixed h-screen" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}>
+        <div>
+          {/*  className="bg-scroll h-screen p-5" style={{ backgroundImage: `url(${OldLibraryWallpaper})` }}> */}
           <Switch>
             <PrivateRoute path="/profile" component={Profile} />
             <Route exact path="/home" component={HomePage} />
