@@ -22,8 +22,7 @@ html {
 
 body {
     margin: 0;
-    background-image: url("./images/OldLibraryWallpaper.png");
-    background-attachment: "local";
+    background-image: url("./images/OldLibraryWallpaper.png")    
 }
 
 /**

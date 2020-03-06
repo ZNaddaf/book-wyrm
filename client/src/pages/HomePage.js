@@ -22,7 +22,6 @@ import Content from "../components/Content";
 // Homepage after login
 /////////////////////////////////////
 const HomePage = () => (
-
   <Fragment>
     <Hero />
     <Content />
