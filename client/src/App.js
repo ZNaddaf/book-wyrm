@@ -40,7 +40,7 @@ const App = () => {
 
   var slide = keyframes`
 from { background-position: 0 0; }
-to { background-position: -400px 0
+to { background-position: -400px 0 }
 `;
 
   const Container = styled.div`
