@@ -13,7 +13,7 @@ function Author(props) {
         name="search"
         type="text"
         className="form-conrol"
-        placeholder="Search For a Book Title"
+        placeholder="Search by author"
         id="search"
         className="shadow appearance-none border rounded w-3/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline m-auto mb-3"
       />

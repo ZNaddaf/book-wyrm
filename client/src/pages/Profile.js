@@ -15,7 +15,6 @@ import DeleteBook from "../components/DeleteBook"
 // ability to use profile banner image
 /////////////////////////////////////
 import banner from "../assets/profile_banner.png";
-import { Container, Row, Col } from "reactstrap";
 
 const Profile = () => {
   const { loading, user } = useAuth0();
@@ -26,22 +25,14 @@ const Profile = () => {
 
   return (
 
-    <Container className="mb-5">
-      <Row>
-        <img className="mb-3 app-banner" src={banner} alt="profile banner" />
-      </Row>
-      <Row className="align-items-center profile-header mb-5 text-center text-md-left">
-        <Col md>
-          <h2>{user.email}'s Saved Books </h2>
-        </Col>
-      </Row>
-      <Row className="align-items-center">
-        <DeleteBook {...user}
-        />
-      </Row>
+    <div className="p-6">
+      <div className="m-auto w-3/4 md:w-1/3 shadow-xl border rounded" style={{ backgroundColor: "#313b23", borderColor: "#e2e8f05e" }}>
+        <img className="border-gray-100" style={{ borderBottomWidth: "1px", borderRadius: "25px 25px 0px 0px" }} src={banner} alt="profile banner" />
+        <h2 className="p-3 align-center text-center text-md-left" >{user.email}'s Saved Books:</h2>
+      </div>
 
-
-    </Container>
+      <DeleteBook {...user} />
+    </div>
 
   );
 };

@@ -19,13 +19,11 @@ const NavBar = () => {
 
       {isAuthenticated && <button className="hover:text-teal-200 mr-4" onClick={() => logout()}>Log out</button>}
 
-      {/* add a link to the home search and profile pages */}
       {isAuthenticated && (
         <span>
           <Link className="hover:text-teal-200 mr-4" to="/">Home</Link>&nbsp;
             <Link className="hover:text-teal-200 mr-4" to="/profile">Profile</Link>
           <Link className="hover:text-teal-200 mr-4" to="/search">Search</Link>
-          {/*Add a link to the /external-api route */}
           <Link className="hidden hover:text-teal-200 mr-4" to="/external-api">External API</Link>
         </span>
       )}

@@ -87,9 +87,9 @@ export default class BooksContainer extends React.Component {
   // Rendering Search bars (title/author) to page
   render() {
     return (
-      <div>
-        <div className="m-auto w-1/3 shadow-lg rounded" style={{ backgroundColor: "#313b23" }}>
-          <img src={banner} alt="search banner" className="border-gray-100" style={{ borderBottomWidth: "1px" }} />
+      <div className="p-6">
+        <div className="m-auto w-3/4 md:w-1/3 shadow-lg rounded border" style={{ backgroundColor: "#313b23", borderColor: "#e2e8f05e" }}>
+          <img src={banner} alt="search banner" className="border-gray-100" style={{ borderBottomWidth: "1px", borderRadius: "25px 25px 0px 0px" }} />
           <SearchForm
             value={this.state.search}
             handleInputChange={this.handleInputChange}
