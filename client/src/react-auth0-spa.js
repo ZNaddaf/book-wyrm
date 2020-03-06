@@ -1,4 +1,9 @@
+/////////////////////////////////////
 // src/react-auth0-spa.js
+// a pre-created file from Auth0
+// specific for REACT Sinlge Page Applications (AKA SPA)
+/////////////////////////////////////
+
 import React, { useState, useEffect, useContext } from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
 

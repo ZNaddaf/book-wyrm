@@ -1,14 +1,24 @@
 
 import React from "react";
-// import React, { Fragment } from "react";
+/////////////////////////////////////
+// auth0 functionality (loading, user) imported from Auth0SPA
+/////////////////////////////////////
 import { useAuth0 } from "../react-auth0-spa";
-import DeleteBook from "../components/DeleteBook"
-import { Container, Row, Col } from "reactstrap";
 
+/////////////////////////////////////
+// Delete book componenent 
+// AKA.. **profile reading list**
+/////////////////////////////////////
+import DeleteBook from "../components/DeleteBook"
+
+/////////////////////////////////////
+// ability to use profile banner image
+/////////////////////////////////////
+import banner from "../assets/profile_banner.png";
+import { Container, Row, Col } from "reactstrap";
 
 const Profile = () => {
   const { loading, user } = useAuth0();
-
 
   if (loading || !user) {
     return <div>Loading...</div>;
@@ -17,10 +27,8 @@ const Profile = () => {
   return (
 
     <Container className="mb-5">
-      <Row className="align-items-center profile-header mb-5 text-center text-md-left">
-        <Col md>
-          <h1>Welcome {user.email} to Your Reading List</h1>
-        </Col>
+      <Row>
+        <img className="mb-3 app-banner" src={banner} alt="profile banner" />
       </Row>
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md>
@@ -28,10 +36,10 @@ const Profile = () => {
         </Col>
       </Row>
       <Row className="align-items-center">
-        <DeleteBook userEmail={user.email}
-        //delete button from list
+        <DeleteBook {...user}
         />
       </Row>
+
 
     </Container>
 

@@ -26,15 +26,6 @@
   font-size: 10px;
 }
 
-.app-banner {
-  height: auto;
-  pointer-events: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-}
-
 .app-botm {
   height: auto;
   pointer-events: none;

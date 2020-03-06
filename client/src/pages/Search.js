@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import BooksContainer from "../components/BooksContainer";
-
-class Search extends Component {
-
-  render() {
-    return (
-      <div className="bg-fixed min-h-screen">
-        <h1>Search for Book</h1>
-
-        <BooksContainer />
-      </div>
-    );
-  }
+import { useAuth0 } from "../react-auth0-spa";
+/////////////////////////////////////
+// import books container for search population
+/////////////////////////////////////
+function Search(props) {
+  const { user } = useAuth0();
+  return (
+    <div>
+      <BooksContainer {...user} />
+    </div>
+  );
 }
-
 export default Search;
